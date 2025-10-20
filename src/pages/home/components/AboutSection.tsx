@@ -25,7 +25,7 @@ const AboutSection = () => {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Om <span className="gradient-text">Gruppe 9</span>
+              Om <span className="gradient-text">Code 9</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
           </div>
@@ -80,9 +80,10 @@ const AboutSection = () => {
             <div className="relative">
               <div className="relative z-10">
                 <img
-                  src={withBase('images/about-team.jpg')}
+                  src={withBase('images/Guttasmiler.jpg')}
                   alt="Gruppe 9 Team"
                   className="rounded-2xl shadow-2xl object-cover w-full h-96"
+                  style={{ objectPosition: '30% 60%' }} // shift image right -> focus more on left, slightly lower
                 />
               </div>
 
@@ -99,11 +100,11 @@ const AboutSection = () => {
               <div className="text-gray-600">Teammedlemmer</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">3+</div>
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">3</div>
               <div className="text-gray-600">Store prosjekter</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">100%</div>
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">110%</div>
               <div className="text-gray-600">Dedikasjon</div>
             </div>
             <div className="text-center">
