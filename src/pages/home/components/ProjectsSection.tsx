@@ -1,66 +1,65 @@
+import { useEffect, useState } from 'react'
 
-import { useEffect, useState } from 'react';
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`
 
 const ProjectsSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true)
       },
       { threshold: 0.3 }
-    );
+    )
 
-    const element = document.getElementById('projects');
-    if (element) {
-      observer.observe(element);
-    }
+    const element = document.getElementById('projects')
+    if (element) observer.observe(element)
 
-    return () => observer.disconnect();
-  }, []);
+    return () => observer.disconnect()
+  }, [])
 
   const projects = [
     {
-      title: "IK Start – Køfri kioskopplevelse",
-      category: "Mobile App & UX Design",
+      title: 'IK Start – Køfri kioskopplevelse',
+      category: 'Mobile App & UX Design',
       description:
-      "Revolusjonerende løsning for køfri handel som forbedrer kundeopplevelsen og effektiviserer driften for IK Start.",
-      image: "/images/IkStartappbilde.jpg",
-      tags: ["React Native", "Payment Integration", "UX Design", "Real-time"],
-      color: "from-blue-500 to-cyan-500",
-      route: "/projects/ikstart",
+        'Revolusjonerende løsning for køfri handel som forbedrer kundeopplevelsen og effektiviserer driften for IK Start.',
+      image: withBase('images/IkStartappbilde.jpg'),
+      tags: ['React Native', 'Payment Integration', 'UX Design', 'Real-time'],
+      color: 'from-blue-500 to-cyan-500',
+      route: '/projects/ikstart',
     },
-
     {
-      title: "Kartverket – Webapp med kart og sikker innlogging",
-      category: "Web Application & Security",
-      description: "Avansert kartapplikasjon med robust sikkerhet og brukerautentisering for Kartverket sine tjenester.",
-      image: "/images/kartverketlogooo.jpg",
-      tags: ["React", "Maps API", "Authentication", "Security"],
-      color: "from-green-500 to-emerald-500",
-      route: "/projects/kartverket"
+      title: 'Kartverket – Webapp med kart og sikker innlogging',
+      category: 'Web Application & Security',
+      description:
+        'Avansert kartapplikasjon med robust sikkerhet og brukerautentisering for Kartverket sine tjenester.',
+      image: withBase('images/kartverketlogooo.jpg'),
+      tags: ['React', 'Maps API', 'Authentication', 'Security'],
+      color: 'from-green-500 to-emerald-500',
+      route: '/projects/kartverket',
     },
-    
     {
-  title: "FINN.no – Forbedret kart og universell utforming",
-  category: "Accessibility & User Experience",
-  description:
-    "Omfattende forbedringer av kartfunksjonalitet og tilgjengelighet for å gjøre FINN.no mer inkluderende for alle brukere.",
-  image: "/images/Finnprojectside.jpg", // <-- your local image
-  tags: ["Accessibility", "Maps", "Universal Design", "Frontend"],
-  color: "from-orange-500 to-red-500",
-  route: "/projects/finn"
-}
-
-  ];
+      title: 'FINN.no – Forbedret kart og universell utforming',
+      category: 'Accessibility & User Experience',
+      description:
+        'Omfattende forbedringer av kartfunksjonalitet og tilgjengelighet for å gjøre FINN.no mer inkluderende for alle brukere.',
+      image: withBase('images/Finnprojectside.jpg'),
+      tags: ['Accessibility', 'Maps', 'Universal Design', 'Frontend'],
+      color: 'from-orange-500 to-red-500',
+      route: '/projects/finn',
+    },
+  ]
 
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Våre <span className="gradient-text">Prosjekter</span>
@@ -77,8 +76,8 @@ const ProjectsSection = () => {
                 key={index}
                 className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer transform hover:-translate-y-2"
                 onClick={() => {
-                  if (project.route !== "#") {
-                    window.REACT_APP_NAVIGATE(project.route);
+                  if ((window as any).REACT_APP_NAVIGATE && project.route !== '#') {
+                    (window as any).REACT_APP_NAVIGATE(project.route)
                   }
                 }}
               >
@@ -89,7 +88,9 @@ const ProjectsSection = () => {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-80 transition-opacity duration-300`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-80 transition-opacity duration-300`}
+                  ></div>
                   <div className="absolute top-4 left-4">
                     <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
                       {project.category}
@@ -102,10 +103,8 @@ const ProjectsSection = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
+                  <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
@@ -134,12 +133,10 @@ const ProjectsSection = () => {
           {/* Call to Action */}
           <div className="text-center mt-16">
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Har du et prosjekt i tankene?
-              </h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Har du et prosjekt i tankene?</h3>
               <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Vi er alltid interessert i nye utfordringer og muligheter for samarbeid. 
-                La oss diskutere hvordan vi kan hjelpe deg med ditt neste prosjekt.
+                Vi er alltid interessert i nye utfordringer og muligheter for samarbeid. La oss diskutere hvordan vi kan
+                hjelpe deg med ditt neste prosjekt.
               </p>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -153,7 +150,7 @@ const ProjectsSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ProjectsSection;
+export default ProjectsSection

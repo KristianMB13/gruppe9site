@@ -1,7 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import Navbar from '../../../components/feature/Navbar';
 import Footer from '../../../components/feature/Footer';
+
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`;
 
 const NidalPage = () => {
 
@@ -48,8 +49,6 @@ const NidalPage = () => {
     { icon: 'ri-flight-takeoff-line', title: 'Reising', description: 'Oppleve nye steder og kulturer' }
   ];
 
- 
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Navbar />
@@ -64,11 +63,11 @@ const NidalPage = () => {
               <div className="relative w-full max-w-md mx-auto">
                 <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <img
-                  src="/images/nidalexpand.jpg"
-                  alt="Nidal Alendar"
-                  className="w-full h-full object-cover transform scale-100 transition-transform duration-500"
-                  style={{ objectPosition: '50% 60%' }}
-                 />
+                    src={withBase('images/nidalexpand.jpg')}
+                    alt="Nidal Alendar"
+                    className="w-full h-full object-cover transform scale-100 transition-transform duration-500"
+                    style={{ objectPosition: '50% 60%' }}
+                  />
                 </div>
                 {/* Floating decoration */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full opacity-20 animate-pulse"></div>

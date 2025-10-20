@@ -1,26 +1,23 @@
+import { useEffect, useState } from 'react'
 
-import { useEffect, useState } from 'react';
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`
 
 const AboutSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true)
       },
       { threshold: 0.3 }
-    );
+    )
 
-    const element = document.getElementById('about');
-    if (element) {
-      observer.observe(element);
-    }
+    const element = document.getElementById('about')
+    if (element) observer.observe(element)
 
-    return () => observer.disconnect();
-  }, []);
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
@@ -36,12 +33,12 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                Vi er fire dedikerte IT-studenter ved Universitetet i Agder som brenner for å skape innovative teknologiske løsninger. 
+                Vi er fire dedikerte IT-studenter ved Universitetet i Agder som brenner for å skape innovative teknologiske løsninger.
                 Vår gruppe kombinerer kreativitet med teknisk ekspertise for å levere prosjekter som gjør en reell forskjell.
               </p>
-              
+
               <p className="text-lg text-gray-700 leading-relaxed">
-                Med bakgrunn innen frontend-utvikling, backend-arkitektur, fullstack-utvikling og testing, dekker vi hele spekteret 
+                Med bakgrunn innen frontend-utvikling, backend-arkitektur, fullstack-utvikling og testing, dekker vi hele spekteret
                 av moderne programvareutvikling. Vi fokuserer på brukeropplevelse, skalerbarhet og kvalitet i alt vi gjør.
               </p>
 
@@ -83,12 +80,12 @@ const AboutSection = () => {
             <div className="relative">
               <div className="relative z-10">
                 <img
-                  src="https://readdy.ai/api/search-image?query=Four%20young%20professional%20software%20developers%20working%20together%20in%20modern%20office%20space%2C%20diverse%20team%20collaborating%20on%20laptops%20and%20monitors%2C%20contemporary%20workspace%20with%20natural%20lighting%2C%20professional%20atmosphere%2C%20teamwork%20and%20innovation%2C%20clean%20minimalist%20design&width=600&height=400&seq=about-team&orientation=landscape"
+                  src={withBase('images/about-team.jpg')}
                   alt="Gruppe 9 Team"
                   className="rounded-2xl shadow-2xl object-cover w-full h-96"
                 />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-200 rounded-full opacity-50 animate-float"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-200 rounded-full opacity-50 animate-float-delayed"></div>
@@ -117,7 +114,7 @@ const AboutSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default AboutSection;
+export default AboutSection

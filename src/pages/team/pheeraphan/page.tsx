@@ -1,7 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import Navbar from '../../../components/feature/Navbar';
 import Footer from '../../../components/feature/Footer';
+
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`;
 
 const PheeraphanPage = () => {
 
@@ -47,8 +48,6 @@ const PheeraphanPage = () => {
     { icon: 'ri-team-line', title: 'Teamarbeid', description: 'Samarbeid og kundeservice' }
   ];
 
- 
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Navbar />
@@ -63,10 +62,10 @@ const PheeraphanPage = () => {
               <div className="relative w-full max-w-md mx-auto">
                 <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <img
-                  src="/images/pheeraphan.jpg"
-                  alt="Pheeraphan Uthamontree"
-                  className="w-full h-full object-cover object-[50%_80%] transform scale-105 transition-transform duration-500"
-                />
+                    src={withBase('images/pheeraphan.jpg')}
+                    alt="Pheeraphan Uthamontree"
+                    className="w-full h-full object-cover object-[50%_80%] transform scale-105 transition-transform duration-500"
+                  />
                 </div>
                 {/* Floating decoration */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full opacity-20 animate-pulse"></div>

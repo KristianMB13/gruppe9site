@@ -1,7 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import Navbar from '../../../components/feature/Navbar';
 import Footer from '../../../components/feature/Footer';
+
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`;
 
 const KristianPage = () => {
 
@@ -63,13 +64,12 @@ const KristianPage = () => {
               <div className="relative w-full max-w-md mx-auto">
                 <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                   <img
-  src="/images/kristian.jpg"
-  alt="Kristian Magnus Bergedalen"
-  className="w-full h-full object-cover transform transition-transform duration-500 will-change-transform"
-  /* Slight zoom-in + shift crop upward */
-  style={{ transform: 'scale(1.03)', objectPosition: '50% 35%' }}
-/>
-
+                    src={withBase('images/kristian.jpg')}
+                    alt="Kristian Magnus Bergedalen"
+                    className="w-full h-full object-cover transform transition-transform duration-500 will-change-transform"
+                    /* Slight zoom-in + shift crop upward */
+                    style={{ transform: 'scale(1.03)', objectPosition: '50% 35%' }}
+                  />
                 </div>
                 {/* Floating decoration */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full opacity-20 animate-pulse"></div>
