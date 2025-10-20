@@ -53,7 +53,7 @@ const Navbar = () => {
                   : 'text-white'
               }`}
             >
-              Gruppe 9 · UiA
+              Code 9 · UiA
             </button>
           </div>
 

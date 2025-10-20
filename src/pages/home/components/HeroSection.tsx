@@ -39,7 +39,7 @@ const HeroSection = () => {
           {/* Left side - Text content */}
           <div className="text-left">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Gruppe 9
+              Code 9
               <span className="block text-3xl md:text-4xl font-normal text-purple-200 mt-2">
                 Fire IT-studenter med lidenskap for teknologi
               </span>
