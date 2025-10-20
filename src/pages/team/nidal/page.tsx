@@ -88,13 +88,17 @@ const NidalPage = () => {
                 {/* Social Links */}
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://github.com/dzemalen"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer"
                   >
                     <i className="ri-github-fill text-xl"></i>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/nidal-alendar-905a4b382/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer"
                   >
                     <i className="ri-linkedin-fill text-xl"></i>
@@ -202,7 +206,7 @@ const NidalPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-16 bg-gradient-to-r from紫-600 to-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             La oss samarbeide!
@@ -212,14 +216,18 @@ const NidalPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
+              href="https://github.com/dzemalen"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-github-fill mr-2"></i>
               Se GitHub
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/nidal-alendar-905a4b382/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-purple-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-800 transition-colors duration-300 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-linkedin-fill mr-2"></i>

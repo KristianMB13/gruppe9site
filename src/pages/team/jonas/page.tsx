@@ -83,13 +83,17 @@ const JonasPage = () => {
                 {/* Social Links */}
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://github.com/Jonasmp02"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer"
                   >
                     <i className="ri-github-fill text-xl"></i>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/jonas-pettersen-073931382/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer"
                   >
                     <i className="ri-linkedin-fill text-xl"></i>
@@ -212,14 +216,18 @@ const JonasPage = () => {
           <p className="text-xl text-purple-100 mb-8">Interessert i å jobbe sammen eller lære mer om mine prosjekter?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
+              href="https://github.com/Jonasmp02"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-github-fill mr-2"></i>
               Se GitHub
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/jonas-pettersen-073931382/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-purple-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-800 transition-colors duration-300 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-linkedin-fill mr-2"></i>
