@@ -1,0 +1,16 @@
+{
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+
+  // Enable Tailwind CSS IntelliSense and silence unknown at-rules in builtin CSS validation
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // If you use the Tailwind CSS IntelliSense extension, it will handle class name completions.
+  // The following setting silences the CSS language server's unknownAtRules diagnostics.
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore"
+}
