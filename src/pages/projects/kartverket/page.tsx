@@ -49,10 +49,11 @@ const KartverketPage = () => {
       description: "Moderne webapplikasjon med kartfunksjonalitet"
     },
     {
-      src: "https://readdy.ai/api/search-image?query=University%20students%20collaborating%20on%20web%20development%20project%2C%20team%20working%20with%20laptops%20and%20code%2C%20modern%20study%20environment%2C%20ASP.NET%20development%2C%20programming%20collaboration%2C%20focused%20teamwork&width=800&height=600&seq=kartverket-team&orientation=landscape",
-      title: "Development Team",
-      description: "Samarbeid og systemutvikling"
-    },
+  src: "/images/kartverket/gutta.jpg",
+  title: "Development Team",
+  description: "Samarbeid og systemutvikling"
+},
+
     {
       src: "https://readdy.ai/api/search-image?query=Code%20architecture%20diagram%20showing%20MVC%20structure%2C%20database%20connections%2C%20and%20system%20design%2C%20technical%20documentation%2C%20software%20architecture%20visualization%2C%20clean%20professional%20layout&width=800&height=600&seq=kartverket-architecture&orientation=landscape",
       title: "System Architecture",

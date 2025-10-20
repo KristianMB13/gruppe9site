@@ -35,15 +35,17 @@ const JonasPage = () => {
 
   const competencies = [
     { category: 'Front-End', skills: ['JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Figma'] },
-    { category: 'Back-End', skills: ['Python', 'Java'] },
+    { category: 'Back-End', skills: ['Python', 'Java', 'React', 'TypeScript', 'Node.js' ] },
     { category: 'Database', skills: ['MySQL'] },
-    { category: 'Utviklerverktøy', skills: ['GitHub', 'Docker', 'Visual Studio', 'Visual Studio Code', 'Trello'] },
+    { category: 'Utviklerverktøy', skills: ['Git/GitHub', 'Docker', 'Visual Studio', 'Visual Studio Code', 'PowerShell', 'Trello', 'Discord'] },
+
   ]
 
   const interests = [
     { icon: 'ri-computer-line', title: 'PC & Teknologi', description: 'Bygget min egen PC og systemforståelse' },
     { icon: 'ri-palette-line', title: 'Design', description: 'Kreativitet og brukervennlige løsninger' },
-    { icon: 'ri-boxing-line', title: 'Kampsport', description: 'Aktiv innen kampsport og trening' },
+    { icon: 'ri-brain-line', title: 'Innovasjon & Kunstig Intelligens', description: 'Interesse for språkmodeller, agenter og hvordan AI kan brukes til å utvikle smarte og kreative løsninger.' },
+
     { icon: 'ri-football-line', title: 'Sport', description: 'Fotball og styrketrening' },
   ]
 

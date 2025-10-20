@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold gradient-text mb-4">Gruppe 9 · UiA</h3>
+            <h3 className="text-xl font-bold gradient-text mb-4">Code 9 · UiA</h3>
             <p className="text-gray-400 mb-4">
               Fire IT-studenter som skaper innovative teknologiske løsninger med fokus på kvalitet og brukeropplevelse.
             </p>
@@ -57,7 +57,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Gruppe 9 · Universitetet i Agder.
+            © 2025 Code 9 · Universitetet i Agder.
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
           </div>

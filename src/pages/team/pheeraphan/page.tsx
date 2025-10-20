@@ -36,9 +36,10 @@ const PheeraphanPage = () => {
 
   const competencies = [
     { category: 'Front-End', skills: ['JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Figma'] },
-    { category: 'Back-End', skills: ['Java', 'Python'] },
+    { category: 'Back-End', skills: ['Python', 'Java', 'React', 'TypeScript', 'Node.js' ] },
     { category: 'Database', skills: ['MySQL/MariaDB'] },
-    { category: 'Utviklerverktøy', skills: ['Git'] }
+    { category: 'Utviklerverktøy', skills: ['Git/GitHub', 'Docker', 'Visual Studio', 'Visual Studio Code', 'PowerShell', 'Trello', 'Discord'] },
+
   ];
 
   const interests = [
