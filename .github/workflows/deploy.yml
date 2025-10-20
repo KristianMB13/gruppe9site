@@ -2,13 +2,18 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -21,18 +26,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Install deps
         run: npm ci
 
-      - name: Build
+      - name: Build (sets correct base path for GH Pages)
         env:
           BASE_PATH: /gruppe9site/
-          IS_PREVIEW: "false"
         run: npm run build
 
-      - name: Upload artifact
+      # Upload the folder Vite outputs to (you set outDir: 'out')
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: out
