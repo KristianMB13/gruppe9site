@@ -44,25 +44,27 @@ const IKStartPage = () => {
 
   const projectImages = [
     {
-      src: "https://readdy.ai/api/search-image?query=Design%20sketches%20and%20wireframes%20for%20mobile%20food%20ordering%20app%2C%20hand-drawn%20mockups%20on%20paper%2C%20UI%2FUX%20design%20process%2C%20brainstorming%20session%2C%20creative%20workspace%20with%20sketches%20and%20notes%2C%20professional%20design%20development&width=800&height=600&seq=ikstart-sketch&orientation=landscape",
+      src: "/images/ikstart/figma1.jpg",
       title: "Design Sketches",
       description: "Tidlige skisser og wireframes"
     },
+
     {
       src: "https://readdy.ai/api/search-image?query=University%20students%20working%20together%20on%20mobile%20app%20project%2C%20collaborative%20teamwork%2C%20laptops%20and%20notebooks%20on%20table%2C%20focused%20discussion%2C%20modern%20study%20environment%2C%20group%20project%20development&width=800&height=600&seq=ikstart-team&orientation=landscape",
       title: "Teamwork",
       description: "Samarbeid og utvikling"
     },
     {
-      src: "https://readdy.ai/api/search-image?query=Mobile%20app%20prototype%20interface%20for%20food%20ordering%2C%20yellow%20and%20black%20color%20scheme%2C%20clean%20modern%20UI%20design%2C%20smartphone%20mockup%2C%20professional%20app%20development%2C%20IK%20Start%20branding%20colors&width=800&height=600&seq=ikstart-prototype&orientation=landscape",
+      src: "/images/ikstart/figma3.png",
       title: "Final Prototype",
       description: "Ferdig Figma-prototype"
     },
-    {
-      src: "https://readdy.ai/api/search-image?query=Football%20stadium%20concession%20stand%20with%20long%20queues%2C%20crowded%20food%20area%20during%20halftime%2C%20supporters%20waiting%20in%20line%2C%20arena%20atmosphere%2C%20stadium%20food%20service%20challenges&width=800&height=600&seq=ikstart-problem&orientation=landscape",
-      title: "Problem Identification",
-      description: "Lange køer i kioskområdene"
-    }
+
+   {
+    src: "/images/ikstart/start stadio.png",
+    title: "Problem Identification",
+    description: "Lange køer i kioskområdene"
+  },
   ];
 
   const developmentSteps = [
