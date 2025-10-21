@@ -278,12 +278,15 @@ const KartverketPage = () => {
                   og viste hvordan geografisk informasjon kan presenteres på en interaktiv måte.
                 </p>
                 <a
-                  href="#"
-                  className="inline-flex items-center bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-600 hover:to-blue-600 transition-all duration-300 cursor-pointer whitespace-nowrap"
+                href="https://github.com/Pheeraphau/Gruppe12Sem3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-600 hover:to-blue-600 transition-all duration-300 cursor-pointer whitespace-nowrap"
                 >
                   <i className="ri-github-line mr-2"></i>
                   Se kode på GitHub
-                </a>
+                  </a>
+
               </div>
               <div className="bg-gray-900 rounded-2xl p-6 text-green-400 font-mono text-sm overflow-x-auto">
                 <div className="mb-2 text-gray-500">// ASP.NET Core MVC Structure</div>

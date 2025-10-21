@@ -37,37 +37,65 @@ const IKStartPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % projectImages.length);
-    }, 4000);
+    }, 6000); // slowed a bit so slides change a little slower
 
     return () => clearInterval(interval);
   }, []);
 
   const projectImages = [
-   {
-    src: "/gruppe9site/images/ikstart/figma1.jpg",
-    title: "Design Sketches",
-    description: "Tidlige skisser og wireframes"
-},
-
+  // Replaced external/AI-generated images with local assets from public/images/ikstart
+  // Paths use the public/ directory root so they resolve as /images/ikstart/...
 
     {
-      src: "https://readdy.ai/api/search-image?query=University%20students%20working%20together%20on%20mobile%20app%20project%2C%20collaborative%20teamwork%2C%20laptops%20and%20notebooks%20on%20table%2C%20focused%20discussion%2C%20modern%20study%20environment%2C%20group%20project%20development&width=800&height=600&seq=ikstart-team&orientation=landscape",
-      title: "Teamwork",
-      description: "Samarbeid og utvikling"
-    },
+    src: `${import.meta.env.BASE_URL}images/ikstart/startlogo.png`,
+    title: "Start Logo",
+    description: "IK Start"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}images/ikstart/figma1.jpg`,
+    title: "Figma Final Design",
+    description: "Prototype figma"
+  },
     {
-      src: "/gruppe9site/images/ikstart/figma3.png",
-      title: "Final Prototype",
-      description: "Ferdig Figma-prototype"
-},
-
-   {
-    src: "/gruppe9site/images/ikstart/start-stadion.png",
-    title: "Problem Identification",
-    description: "Lange køer i kioskområdene"
-},
-
+    src: `${import.meta.env.BASE_URL}images/ikstart/postitest2.png`,
+    title: "Post-it Layout 1",
+    description: "Ideer og prioriteringer"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}images/ikstart/postittest.png`,
+    title: "Post-it Notes 2",
+    description: "Ideer og prioriteringer"
+  },
+    {
+    src: `${import.meta.env.BASE_URL}images/ikstart/takekart.png`,
+    title: "Tankekart",
+    description: "Bestillingsflyt og kart"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}images/ikstart/wireframe1.png`,
+    title: "Wireframe 1",
+    description: "Tidlige wireframes"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}images/ikstart/wireframe2.png`,
+    title: "Wireframe 2",
+    description: "Tidlige wireframes"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}images/ikstart/figma2.png`,
+    title: "Figma Screen 1",
+    description: "Skjerm fra Figma"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}images/ikstart/figma3.png`,
+    title: "Figma Screen 2",
+    description: "Skjerm fra Figma"
+  },
   ];
+
+  // Navigation helpers for manual slide control
+  const prevSlide = () => setCurrentSlide((s) => (s - 1 + projectImages.length) % projectImages.length);
+  const nextSlide = () => setCurrentSlide((s) => (s + 1) % projectImages.length);
 
   const developmentSteps = [
     {
@@ -160,20 +188,43 @@ const IKStartPage = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Slideshow */}
               <div className="relative">
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+                {/* Fixed responsive height prevents the image from changing the overall layout height */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center bg-gray-50 h-64 sm:h-80 md:h-[420px] lg:h-[480px]">
                   <img
                     src={projectImages[currentSlide].src}
                     alt={projectImages[currentSlide].title}
-                    className="w-full h-full object-cover object-top"
+                    className="max-h-full max-w-full object-contain"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-6 left-6 text-white pointer-events-none">
                     <h3 className="text-xl font-bold mb-2">{projectImages[currentSlide].title}</h3>
                     <p className="text-sm opacity-90">{projectImages[currentSlide].description}</p>
                   </div>
+
+                  {/* Arrow buttons */}
+                  <button
+                    onClick={prevSlide}
+                    aria-label="Previous slide"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-md"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M15 19l-7-7 7-7v14z" />
+                    </svg>
+                  </button>
+
+                  <button
+                    onClick={nextSlide}
+                    aria-label="Next slide"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-md"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M9 5l7 7-7 7V5z" />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Slide indicators */}
@@ -194,7 +245,8 @@ const IKStartPage = () => {
 
               {/* Project Description */}
               <div className="space-y-6">
-                <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="h-64 sm:h-80 md:h-[420px] lg:h-[480px] flex flex-col justify-center">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Prosjektbeskrivelse</h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
                     I samarbeid med IK Start utviklet vi en løsning for å forbedre kampdagsopplevelsen 
@@ -205,6 +257,7 @@ const IKStartPage = () => {
                     Vår løsning ble en matapp som lar supportere forhåndsbestille mat og drikke, 
                     motta varsel når bestillingen er klar, og hente maten uten å stå i kø.
                   </p>
+                </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-yellow-400/10 to-black/10 rounded-2xl p-6 border border-yellow-400/20">

@@ -37,33 +37,48 @@ const FinnPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % projectImages.length);
-    }, 4000);
+    }, 6000); // slower auto-rotate like IKStart page
 
     return () => clearInterval(interval);
   }, []);
 
   const projectImages = [
-    {
-      src: "https://readdy.ai/api/search-image?query=FINN.no%20website%20interface%20showing%20accessibility%20improvements%2C%20clean%20modern%20web%20design%20with%20enhanced%20contrast%20and%20clear%20navigation%2C%20real%20estate%20platform%20with%20improved%20user%20experience%2C%20light%20blue%20and%20white%20color%20scheme&width=800&height=600&seq=finn-interface&orientation=landscape",
-      title: "Improved Interface",
-      description: "Forbedret brukergrensesnitt med bedre tilgjengelighet"
+    // Local assets for FINN page (use BASE_URL so paths work on GitHub Pages / subpaths)
+
+        {
+      src: `${import.meta.env.BASE_URL}images/finn/finnlogo.png`,
+      title: 'FINN Logo'
     },
     {
-      src: "https://readdy.ai/api/search-image?query=UX%20research%20and%20usability%20testing%20session%2C%20researchers%20analyzing%20FINN.no%20website%20accessibility%2C%20user%20testing%20with%20participants%2C%20modern%20office%20environment%20with%20computers%20and%20notes&width=800&height=600&seq=finn-testing&orientation=landscape",
-      title: "User Testing",
-      description: "Brukertesting og tilgjengelighetsevaluering"
+      src: `${import.meta.env.BASE_URL}images/finn/hovedsidefinn.png`,
+      title: 'Hovedside',
+      description: 'Forside og kartvisning'
+    },
+        {
+      src: `${import.meta.env.BASE_URL}images/finn/testingfinn.png`,
+      title: 'Testing',
+      description: 'Noen av sidens funksjoner'
     },
     {
-      src: "https://readdy.ai/api/search-image?query=Figma%20design%20prototypes%20for%20FINN.no%20map%20redesign%2C%20wireframes%20and%20high-fidelity%20mockups%2C%20UX%20design%20process%20with%20accessibility%20focus%2C%20clean%20interface%20design&width=800&height=600&seq=finn-prototypes&orientation=landscape",
-      title: "Design Prototypes",
-      description: "Figma-prototyper og wireframes"
+      src: `${import.meta.env.BASE_URL}images/finn/acheckerogwave.png`,
+      title: 'AChecker & WAVE',
+      description: 'Automatisert tilgjengelighetstesting som ble tatt i bruk'
     },
     {
-      src: "https://readdy.ai/api/search-image?query=Web%20accessibility%20analysis%20tools%20and%20WCAG%20compliance%20testing%2C%20automated%20testing%20interface%20showing%20accessibility%20improvements%2C%20professional%20web%20development%20environment&width=800&height=600&seq=finn-analysis&orientation=landscape",
-      title: "Accessibility Analysis",
-      description: "WCAG-evaluering og automatisert testing"
+      src: `${import.meta.env.BASE_URL}images/finn/colortests.png`,
+      title: 'Fargetester',
+      description: 'Kontrast- og fargetesting'
+    },
+    {
+      src: `${import.meta.env.BASE_URL}images/finn/susscoretest.png`,
+      title: 'SUS-score test',
+      description: 'SUS-score og brukertesting'
     }
   ];
+
+  // Navigation helpers for manual slide control (prev/next)
+  const prevSlide = () => setCurrentSlide((s) => (s - 1 + projectImages.length) % projectImages.length);
+  const nextSlide = () => setCurrentSlide((s) => (s + 1) % projectImages.length);
 
   const developmentSteps = [
     {
@@ -179,20 +194,42 @@ const FinnPage = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-blue-500 mx-auto rounded-full"></div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Slideshow */}
               <div className="relative">
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center bg-gray-50 h-64 sm:h-80 md:h-[420px] lg:h-[480px]">
                   <img
                     src={projectImages[currentSlide].src}
                     alt={projectImages[currentSlide].title}
-                    className="w-full h-full object-cover object-top"
+                    className="max-h-full max-w-full object-contain"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-6 left-6 text-white pointer-events-none">
                     <h3 className="text-xl font-bold mb-2">{projectImages[currentSlide].title}</h3>
                     <p className="text-sm opacity-90">{projectImages[currentSlide].description}</p>
                   </div>
+
+                  {/* Arrow buttons */}
+                  <button
+                    onClick={prevSlide}
+                    aria-label="Previous slide"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-md"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M15 19l-7-7 7-7v14z" />
+                    </svg>
+                  </button>
+
+                  <button
+                    onClick={nextSlide}
+                    aria-label="Next slide"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-md"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M9 5l7 7-7 7V5z" />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Slide indicators */}
@@ -213,17 +250,19 @@ const FinnPage = () => {
 
               {/* Project Description */}
               <div className="space-y-6">
-                <div className="bg-white rounded-2xl p-8 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Prosjektbeskrivelse</h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    I dette prosjektet evaluerte vi FINN.no sitt kartverktøy med fokus på universell 
-                    utforming, tilgjengelighet og brukervennlighet. Gjennom både automatiserte tester, 
-                    manuelle WCAG 2.1-evalueringer og brukertester fant vi flere barrierer.
-                  </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    For å adressere utfordringene valgte vi å forbedre den eksisterende løsningen 
-                    fremfor å bygge noe helt nytt. Resultatet var en betydelig økning i brukervennlighet.
-                  </p>
+                <div className="h-64 sm:h-80 md:h-[420px] lg:h-[480px] flex flex-col justify-center">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Prosjektbeskrivelse</h3>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      I dette prosjektet evaluerte vi FINN.no sitt kartverktøy med fokus på universell 
+                      utforming, tilgjengelighet og brukervennlighet. Gjennom både automatiserte tester, 
+                      manuelle WCAG 2.1-evalueringer og brukertester fant vi flere barrierer.
+                    </p>
+                    <p className="text-gray-600 leading-relaxed">
+                      For å adressere utfordringene valgte vi å forbedre den eksisterende løsningen 
+                      fremfor å bygge noe helt nytt. Resultet var en betydelig økning i brukervennlighet.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-sky-500/10 to-blue-500/10 rounded-2xl p-6 border border-sky-500/20">
