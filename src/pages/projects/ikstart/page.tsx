@@ -43,11 +43,12 @@ const IKStartPage = () => {
   }, []);
 
   const projectImages = [
-    {
-      src: "/images/ikstart/figma1.jpg",
-      title: "Design Sketches",
-      description: "Tidlige skisser og wireframes"
-    },
+   {
+    src: "/gruppe9site/images/ikstart/figma1.jpg",
+    title: "Design Sketches",
+    description: "Tidlige skisser og wireframes"
+},
+
 
     {
       src: "https://readdy.ai/api/search-image?query=University%20students%20working%20together%20on%20mobile%20app%20project%2C%20collaborative%20teamwork%2C%20laptops%20and%20notebooks%20on%20table%2C%20focused%20discussion%2C%20modern%20study%20environment%2C%20group%20project%20development&width=800&height=600&seq=ikstart-team&orientation=landscape",
@@ -55,16 +56,17 @@ const IKStartPage = () => {
       description: "Samarbeid og utvikling"
     },
     {
-      src: "/images/ikstart/figma3.png",
+      src: "/gruppe9site/images/ikstart/figma3.png",
       title: "Final Prototype",
       description: "Ferdig Figma-prototype"
-    },
+},
 
    {
-    src: "/images/ikstart/start stadio.png",
+    src: "/gruppe9site/images/ikstart/start-stadion.png",
     title: "Problem Identification",
     description: "Lange køer i kioskområdene"
-  },
+},
+
   ];
 
   const developmentSteps = [
