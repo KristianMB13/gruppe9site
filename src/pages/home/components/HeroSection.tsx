@@ -32,7 +32,6 @@ const HeroSection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-violet-400/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Rest of the component remains the same */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Left side - Text content */}
@@ -70,19 +69,10 @@ const HeroSection = () => {
           {/* Right side - YouTube Video */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/20 backdrop-blur-sm p-4">
-              
-              <div className="mb-3 flex justify-center">
-  <div className="bg-white/10 text-white backdrop-blur-md ring-1 ring-white/20 shadow-xl 
-                  rounded-full px-4 md:px-6 py-2 text-sm md:text-base font-semibold 
-                  flex items-center gap-2">
-    <span>* Ny video kommer snart! *</span>
-  </div>
-</div>
-
               <div className="aspect-video">
                 <iframe
-                  src="https://www.youtube.com/embed/9vYDOG9cJsU?start=23&autoplay=0&mute=1"
-                  title="Gruppe 9 Project Showcase"
+                  src="https://www.youtube.com/embed/LoC1B_WRCV8?autoplay=0&mute=1"
+                  title="Code 9 Video"
                   className="w-full h-full rounded-xl"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -93,7 +83,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator - positioned at the very bottom of the viewport */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <button
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
