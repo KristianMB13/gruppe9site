@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import Navbar from '../../../components/feature/Navbar';
 import Footer from '../../../components/feature/Footer';
@@ -90,7 +89,7 @@ const IKStartPage = () => {
     src: `${import.meta.env.BASE_URL}images/ikstart/figma3.png`,
     title: "Figma Screen 2",
     description: "Skjerm fra Figma"
-  },
+  }
   ];
 
   // Navigation helpers for manual slide control

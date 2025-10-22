@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
@@ -71,6 +70,15 @@ const HeroSection = () => {
           {/* Right side - YouTube Video */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/20 backdrop-blur-sm p-4">
+              
+              <div className="mb-3 flex justify-center">
+  <div className="bg-white/10 text-white backdrop-blur-md ring-1 ring-white/20 shadow-xl 
+                  rounded-full px-4 md:px-6 py-2 text-sm md:text-base font-semibold 
+                  flex items-center gap-2">
+    <span>* Ny video kommer snart! *</span>
+  </div>
+</div>
+
               <div className="aspect-video">
                 <iframe
                   src="https://www.youtube.com/embed/9vYDOG9cJsU?start=23&autoplay=0&mute=1"
