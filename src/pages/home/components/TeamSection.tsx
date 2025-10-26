@@ -118,9 +118,9 @@ const TeamSection = () => {
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Vår filosofi</h3>
               <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Vi tror på kraften av samarbeid, kontinuerlig læring og innovasjon. Sammen kombinerer vi våre unike
-                ferdigheter for å skape løsninger som ikke bare møter dagens behov, men også forbereder for
-                fremtidens utfordringer.
+                Samarbeid, læring og nysgjerrighet driver oss.
+                Vi bruker forskjellene våre som en styrke, og sammen lager 
+                vi løsninger vi lærer av og som stadig blir bedre underveis.
               </p>
             </div>
           </div>

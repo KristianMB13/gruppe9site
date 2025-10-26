@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+// Base-aware helper (added)
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`
+
 type Props = {
   orgName?: string;
   email?: string;
@@ -67,6 +70,9 @@ const ContactSection: React.FC<Props> = ({
       },
     ],
   };
+
+  // Resolve image with base (added)
+  const resolvedImageSrc = imageSrc?.startsWith('http') ? imageSrc : withBase(imageSrc);
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
@@ -163,7 +169,7 @@ const ContactSection: React.FC<Props> = ({
             <div className="space-y-8">
               <div className="relative">
                 <img
-                  src={imageSrc}
+                  src={resolvedImageSrc}
                   alt={`${orgName} team`}
                   className="rounded-2xl shadow-2xl object-cover w-full h-64"
                 />
