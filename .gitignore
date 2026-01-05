@@ -3,7 +3,9 @@ node_modules/
 
 # Vite build output + cache
 dist/
+out/
 .vite/
+.vite-temp/
 
 # logs
 npm-debug.log*
