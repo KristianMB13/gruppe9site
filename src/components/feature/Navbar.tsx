@@ -59,7 +59,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-center space-x-8">
               {[
                 { name: 'Hjem', id: 'hero' },
                 { name: 'Om oss', id: 'about' },
@@ -68,8 +68,8 @@ const Navbar = () => {
                 { name: 'Kontakt', id: 'contact' }
               ].map((item) => (
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  key={item.name}
+                  onClick={() => scrollToSection((item as any).id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${
                     isScrolled 
                       ? 'text-gray-700 hover:text-blue-600' 
@@ -79,6 +79,20 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={() => {
+                  if (window.REACT_APP_NAVIGATE) window.REACT_APP_NAVIGATE('/prosjektstatus');
+                  else window.location.href = '/prosjektstatus';
+                }}
+                className={`ml-4 pl-4 border-l transition-colors cursor-pointer ${
+                  isScrolled 
+                    ? 'border-gray-300 text-gray-700 hover:text-blue-600' 
+                    : 'border-white/30 text-white hover:text-blue-200'
+                }`}
+              >
+                <div className="text-sm font-medium">Prosjektstatus</div>
+                <div className="text-xs opacity-75">(Knowit)</div>
+              </button>
             </div>
           </div>
 
@@ -111,13 +125,27 @@ const Navbar = () => {
                 { name: 'Kontakt', id: 'contact' }
               ].map((item) => (
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  key={item.name}
+                  onClick={() => {
+                    scrollToSection((item as any).id);
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left cursor-pointer whitespace-nowrap"
                 >
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={() => {
+                  if (window.REACT_APP_NAVIGATE) window.REACT_APP_NAVIGATE('/prosjektstatus');
+                  else window.location.href = '/prosjektstatus';
+                  setIsMobileMenuOpen(false);
+                }}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left cursor-pointer mt-2 border-t border-gray-200 pt-3"
+              >
+                <div>Prosjektstatus</div>
+                <div className="text-sm opacity-75">(Knowit)</div>
+              </button>
             </div>
           </div>
         )}

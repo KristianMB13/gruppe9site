@@ -8,6 +8,7 @@ import FinnPage from '../pages/projects/finn/page';
 import KristianPage from '../pages/team/kristian/page';
 import JonasPage from '../pages/team/jonas/page';
 import PheeraphanPage from '../pages/team/pheeraphan/page';
+import ProsjektstatusPage from '../pages/prosjektstatus/page';
 
 const routes: RouteObject[] = [
   {
@@ -41,6 +42,10 @@ const routes: RouteObject[] = [
   {
     path: '/team/pheeraphan',
     element: <PheeraphanPage />,
+  },
+  {
+    path: '/prosjektstatus',
+    element: <ProsjektstatusPage />,
   },
   {
     path: '*',
