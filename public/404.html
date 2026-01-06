@@ -1,21 +1,42 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex">
-    <title>Redirecting…</title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Not found</title>
+    <style>
+      body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; background:#f8fafc; color:#111827 }
+      .card{background:white;padding:24px;border-radius:12px;box-shadow:0 6px 18px rgba(13,38,76,0.08);max-width:720px}
+      a{color:#6d28d9}
+    </style>
   </head>
   <body>
+    <div class="card">
+      <h1>Page not found</h1>
+      <p>The requested page was not found. You will be redirected back to the app.</p>
+      <p>If the redirect does not work, <a id="index-link" href="#">click here</a>.</p>
+    </div>
+
     <script>
-      (function () {
-        // Compute repo base (e.g. "/gruppe9site") if present
-        var parts = location.pathname.split('/');
-        var base = parts.length > 1 && parts[1] ? '/' + parts[1] : '';
-        // Path after the repo base
-        var path = location.pathname.replace(base, '') + location.search + location.hash;
-        // Redirect to the app root with hash-based path preserved
-        var target = base + '/#' + (path || '/');
-        location.replace(target);
+      (function(){
+        try {
+          // Build a relative 'index.html' URL in the same folder level as the requested path
+          // e.g. /repo/path -> /repo/index.html
+          var path = window.location.pathname + window.location.search + window.location.hash;
+          // Redirect to the nearest index.html and append the original path in the hash
+          // index.html relative ensures it works for project pages served from a subpath
+          var target = 'index.html#' + path;
+          // set fallback link
+          var link = document.getElementById('index-link');
+          if (link) link.setAttribute('href', target);
+          // perform the redirect
+          window.location.replace(target);
+        } catch (e) {
+          // If anything fails, allow the user to click the link
+          console.error(e);
+        }
       })();
     </script>
   </body>
