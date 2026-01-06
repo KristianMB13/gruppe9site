@@ -13,7 +13,7 @@ const ProsjektstatusPage = () => {
     {
       number: '1',
       title: 'Hva konkret er det vi skal utvikle / gjøre?',
-      content: 'Vi skal utvikle en løsning som presenterer maritime drifts- og sensordata på en måte som gir verdi for brukere (f.eks. operatører/teknisk personell). Prosjektet tar utgangspunkt i Knowits samarbeid med Telenor Maritime (UDS), der data fra skip og ferger samles inn og struktureres. Per nå vet vi at det handler om å lage et "dashboard"/grensesnitt, men nøyaktige funksjoner og tekniske valg må avklares i starten av semesteret når vi får mer innsikt i data og eksisterende løsning.'
+      content: 'Vi skal utvikle en løsning som presenterer maritime drifts- og sensordata på en måte som gir verdi for brukere (f.eks. operatører/teknisk personell). Prosjektet tar utgangspunkt i Knowits samarbeid med Telenor Maritime, der data fra skip og ferger samles inn og struktureres. Per nå vet vi at det handler om å lage et "dashboard"/grensesnitt, men nøyaktige funksjoner og tekniske valg må avklares i starten av semesteret når vi får mer innsikt i data og eksisterende løsning.'
     },
     {
       number: '2',
