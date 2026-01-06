@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        // Compute repo base (e.g. "/gruppe9site") if present
+        var parts = location.pathname.split('/');
+        var base = parts.length > 1 && parts[1] ? '/' + parts[1] : '';
+        // Path after the repo base
+        var path = location.pathname.replace(base, '') + location.search + location.hash;
+        // Redirect to the app root with hash-based path preserved
+        var target = base + '/#' + (path || '/');
+        location.replace(target);
+      })();
+    </script>
+  </body>
+</html>
