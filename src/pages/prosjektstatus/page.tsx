@@ -13,43 +13,61 @@ const ProsjektstatusPage = () => {
     {
       number: '1',
       title: 'Hva konkret er det vi skal utvikle / gjøre?',
-      content: 'Vi skal utvikle en løsning som presenterer maritime drifts- og sensordata på en måte som gir verdi for brukere (f.eks. operatører/teknisk personell). Prosjektet tar utgangspunkt i Knowits samarbeid med Telenor Maritime, der data fra skip og ferger samles inn og struktureres. Per nå vet vi at det handler om å lage et "dashboard"/grensesnitt, men nøyaktige funksjoner og tekniske valg må avklares i starten av semesteret når vi får mer innsikt i data og eksisterende løsning.'
+      content: 'Vi skal utvikle en konseptuell og teknisk løsning for agentbasert beslutningsstøtte innen maritim drift. Løsningen tar utgangspunkt i sanntids og historiske sensordata fra skip, og kombinerer disse med AI-agenter og språkmodeller for å forklare tilstand, avdekke avvik og foreslå tiltak. Målet er å utforske hvordan moderne arkitektur og AI kan brukes til mer enn tradisjonell overvåkning og gi reell verdi til operatører og teknisk personell.'
     },
     {
-      number: '2',
-      title: 'Viktige kvalitetsaspekter i produktet (og hvorfor)',
-      content: [
-        {
-          subtitle: 'Brukervennlighet og forståelighet (UX)',
-          text: 'Løsningen må være enkel å bruke og lett å forstå. Brukeren skal raskt få oversikt over hva som skjer, uten å måtte tolke rådata selv.'
-        },
-        {
-          subtitle: 'Pålitelighet og stabilitet',
-          text: 'Produktet må oppleves som stabilt og forutsigbart. Hvis løsningen fungerer dårlig eller ujevnt, vil brukeren miste tillit til både systemet og dataene.'
-        },
-        {
-          subtitle: 'Synliggjøring av datakvalitet',
-          text: 'Dersom data er mangelfulle, forsinkede eller usikre, må dette komme tydelig frem. Det er viktig at brukeren ikke tar beslutninger basert på data som ikke er til å stole på.'
-        },
-        {
-          subtitle: 'Grunnleggende sikkerhet',
-          text: 'Selv om sikkerhet ikke er hovedfokus i prosjektet, bør løsningen håndtere data på en ansvarlig måte og ikke eksponere informasjon unødvendig.'
-        }
-      ],
-      note: 'Disse kvalitetsaspektene er viktige fordi verdien i produktet ikke ligger i mengden data, men i hvor nyttig, forståelig og pålitelig løsningen oppleves for brukeren.'
+  number: '2',
+  title: 'Viktige kvalitetsaspekter i produktet (og hvorfor)',
+  content: [
+    {
+      subtitle: 'Brukerforståelse og forklarbarhet',
+      text: 'Løsningen skal gjøre komplekse data og analyser forståelige for brukeren. I stedet for å presentere rådata, skal systemet forklare hva som skjer, hvorfor det skjer, og hva det kan bety for videre drift.'
     },
     {
-      number: '3',
-      title: 'Hvordan vet vi om ønsket kvalitet er oppnådd? (indikatorer)',
-      content: [
-        'Bruker-test/feedback: korte gjennomganger med Knowit (og evt. relevante personer) der vi spør: "gir dette mening?" og "finner du det du trenger?".',
-        'Sjekklister for UI/UX: konsistens i layout, tydelige enheter/labels, lesbarhet, enkel navigasjon.',
-        'UX-laws og universelt utformelt',
-        'Teknisk sjekk: at prototypen kjører uten feil i vanlig bruk, og at de viktigste skjermene/visningene alltid fungerer.',
-        'Kodevurdering og tester',
-        'Datakvalitet-markering: at vi har en tydelig måte å vise "OK / usikkert / mangler" på data (dersom aktuelt i løsningen).'
-      ]
+      subtitle: 'Pålitelighet og stabilitet',
+      text: 'Produktet må oppleves som stabilt og forutsigbart. Når løsningen brukes til beslutningsstøtte, er det avgjørende at brukeren har tillit til både systemet og informasjonen som presenteres.'
     },
+    {
+      subtitle: 'Synliggjøring av datakvalitet og usikkerhet',
+      text: 'Dersom data er mangelfulle, forsinkede eller usikre, skal dette komme tydelig frem. Dette er spesielt viktig når AI benyttes til analyse og anbefalinger, for å redusere risiko for feil beslutninger.'
+    },
+    {
+      subtitle: 'Fleksibel og robust arkitektur',
+      text: 'Løsningen skal bygges på en arkitektur som gjør det mulig å koble sammen flere datakilder, AI-modeller og tjenester, og som kan videreutvikles over tid.'
+    },
+    {
+      subtitle: 'Grunnleggende sikkerhet og ansvarlig bruk av AI',
+      text: 'Selv om sikkerhet ikke er hovedfokus i prosjektet, skal løsningen håndtere data på en ansvarlig måte og ta hensyn til risiko knyttet til bruk av AI, som feilslutninger og hallusinasjoner.'
+    }
+  ],
+  note: 'Disse kvalitetsaspektene er viktige fordi verdien i løsningen ikke ligger i mengden data eller teknologi, men i hvor godt den støtter forståelige, pålitelige og trygge beslutninger for brukeren.'
+},
+    {
+  number: '3',
+  title: 'Hvordan vet vi om ønsket kvalitet er oppnådd? (indikatorer)',
+  content: [
+    {
+      subtitle: 'Brukertesting og faglig feedback',
+      text: 'Korte gjennomganger og diskusjoner med Knowit, Telenor Maritime og relevante roller fra Color Line (f.eks. kapteiner og maskinister) for å vurdere om løsningen er forståelig, nyttig og gir mening i en operativ kontekst.'
+    },
+    {
+      subtitle: 'Forklarbarhet og tillit til beslutningsstøtte',
+      text: 'Vurdering av om systemet tydelig forklarer hva som skjer i dataene, hvorfor det skjer, og om brukeren opplever analysene og anbefalingene som troverdige.'
+    },
+    {
+      subtitle: 'Synlig datakvalitet og usikkerhet',
+      text: 'Sjekk av om mangelfull, forsinket eller usikker data kommer tydelig frem, slik at beslutninger ikke tas på feil grunnlag.'
+    },
+    {
+      subtitle: 'Teknisk stabilitet og arkitektur',
+      text: 'Verifisering av at prototypen fungerer stabilt, og at arkitekturen er modulær, forståelig og egnet for videre utvikling og utvidelse.'
+    },
+    {
+      subtitle: 'Ansvarlig bruk av AI',
+      text: 'Evaluering av hvordan løsningen håndterer risiko knyttet til AI, som feilslutninger og hallusinasjoner, og hvordan dette kommuniseres til brukeren.'
+    }
+  ]
+},
     {
       number: '4',
       title: 'Planer, backlogg, estimater og ressursbruk – hvordan få kontroll?',
