@@ -136,6 +136,18 @@ const ProsjektstatusPage = () => {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Vår gjennomgang av prosjektkvalitet, planlegging og gjennomføring
             </p>
+            <div className="mt-10 max-w-3xl mx-auto">
+              <p className="text-lg font-semibold text-gray-900 mb-4">Status video 1</p>
+              <div className="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/9v0hraJt8H4"
+                  title="Status video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-8 rounded-full"></div>
           </div>
         </div>
