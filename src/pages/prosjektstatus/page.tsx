@@ -141,7 +141,7 @@ const ProsjektstatusPage = () => {
               <div className="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg">
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/9v0hraJt8H4"
+                  src="https://www.youtube.com/watch?v=-zL-mKu7GNg"
                   title="Status video 1"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
