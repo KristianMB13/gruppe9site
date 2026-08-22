@@ -26,7 +26,7 @@ const TeamSection = () => {
       link: '/team/nidal',
     },
     {
-      name: 'Kristian M. Bergdalen',
+      name: 'Kristian M. Bergedalen',
       image: withBase('images/kristian.jpg'),
       link: '/team/kristian',
     },
@@ -61,7 +61,7 @@ const TeamSection = () => {
               Møt <span className="gradient-text">Teamet</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Fire studenter med unik kompetanse og felles mål
+              Medlemmer fra Gruppe 9 ved IT og informasjonssystemer
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-6"></div>
           </div>
