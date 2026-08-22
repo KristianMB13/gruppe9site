@@ -1,28 +1,21 @@
 import { useEffect, useState } from 'react';
 
-// Base-aware helper (added)
 const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`
 
 type Props = {
   orgName?: string;
-  email?: string;
-  phone?: string;       // E.164 preferred, e.g. "+47 95000000"
-  addressLine?: string; // e.g. "Universitetet i Agder, Kristiansand"
+  addressLine?: string;
   imageSrc?: string;
-  linkedinUrl?: string;
   githubUrl?: string;
-  youtubeUrl?: string;
 };
 
 const ContactSection: React.FC<Props> = ({
   orgName = 'Gruppe 9',
-  email = 'Jonasmp@uia.no',
-  phone = '+47 95306110',
   addressLine = 'Universitetet i Agder, Kristiansand',
   imageSrc = '/images/gruppebilde.jpg',
+  githubUrl = 'https://github.com/KristianMB13/gruppe9site',
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [copiedField, setCopiedField] = useState<null | 'email' | 'phone'>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,42 +29,14 @@ const ContactSection: React.FC<Props> = ({
     return () => observer.disconnect();
   }, []);
 
-  const copy = async (text: string, field: 'email' | 'phone') => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedField(field);
-      setTimeout(() => setCopiedField(null), 1600);
-    } catch {
-      // clipboard may be blocked; silently ignore
-    }
-  };
-
-  // JSON-LD (includes basic postal address since we show location)
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'WebSite',
     name: orgName,
     url: typeof window !== 'undefined' ? window.location.origin : undefined,
-    address: addressLine
-      ? {
-          '@type': 'PostalAddress',
-          streetAddress: addressLine,
-          addressCountry: 'NO',
-        }
-      : undefined,
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        contactType: 'customer support',
-        email: email || undefined,
-        telephone: phone || undefined,
-        areaServed: 'NO',
-        availableLanguage: ['Norwegian', 'English', 'Spanish', 'Bosnian'],
-      },
-    ],
+    about: 'Student projects and portfolio work from IT and Information Systems at the University of Agder',
   };
 
-  // Resolve image with base (added)
   const resolvedImageSrc = imageSrc?.startsWith('http') ? imageSrc : withBase(imageSrc);
 
   return (
@@ -81,91 +46,76 @@ const ContactSection: React.FC<Props> = ({
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Kontakt <span className="gradient-text">Oss</span>
+              Kontakt og <span className="gradient-text">profiler</span>
             </h2>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-              Ta kontakt direkte via e-post eller telefon – ingen skjema nødvendig.
+              Dette er et student- og porteføljeprosjekt. Bruk repoet eller medlemssidene for mer kontekst om arbeidet.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-6"></div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left: direct contact actions */}
+            {/* Left: project links */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6">Slik når du oss</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Prosjektlenker</h3>
 
-              <div className="space-y-6">
-                {/* Email */}
-                <div className="flex items-start sm:items-center justify-between gap-4">
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <i className="ri-github-fill text-2xl text-blue-400"></i>
+                  </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
-                      <i className="ri-mail-line text-2xl text-blue-400"></i>
-                    </div>
                     <div>
-                      <p className="text-sm text-blue-200">E-post</p>
+                      <p className="text-sm text-blue-200">GitHub</p>
                       <a
-                        href={`mailto:${email}`}
+                        href={githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-white font-medium hover:underline break-all"
                       >
-                        {email}
+                        KristianMB13/gruppe9site
                       </a>
                     </div>
-                  </div>
-                  <div className="flex gap-2 shrink-0">
-                    <a
-                      href={`mailto:${email}`}
-                      className="px-3 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
-                    >
-                      Send e-post
-                    </a>
-                    <button
-                      type="button"
-                      onClick={() => copy(email, 'email')}
-                      className="px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-blue-100 text-sm hover:bg-white/20 transition"
-                      aria-live="polite"
-                    >
-                      {copiedField === 'email' ? 'Kopiert!' : 'Kopier'}
-                    </button>
                   </div>
                 </div>
 
-                {/* Phone */}
-                <div className="flex items-start sm:items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                      <i className="ri-phone-line text-2xl text-emerald-400"></i>
-                    </div>
-                    <div>
-                      <p className="text-sm text-blue-200">Telefon</p>
-                      <a
-                        href={`tel:${phone.replace(/\s+/g, '')}`}
-                        className="text-white font-medium hover:underline"
-                      >
-                        {phone}
-                      </a>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                    <i className="ri-team-line text-2xl text-emerald-400"></i>
                   </div>
-                  <div className="flex gap-2 shrink-0">
-                    <a
-                      href={`tel:${phone.replace(/\s+/g, '')}`}
-                      className="px-3 py-2 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl"
-                    >
-                      Ring oss
-                    </a>
+                  <div>
+                    <p className="text-sm text-blue-200">Medlemssider</p>
                     <button
                       type="button"
-                      onClick={() => copy(phone, 'phone')}
-                      className="px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-blue-100 text-sm hover:bg-white/20 transition"
-                      aria-live="polite"
+                      onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
+                      className="text-white font-medium hover:underline cursor-pointer"
                     >
-                      {copiedField === 'phone' ? 'Kopiert!' : 'Kopier'}
+                      Se profiler og individuelle lenker
                     </button>
                   </div>
                 </div>
               </div>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl text-center"
+                >
+                  Åpne GitHub-repo
+                </a>
+                <button
+                  type="button"
+                  onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-blue-100 text-sm font-semibold hover:bg-white/20 transition"
+                >
+                  Se teamet
+                </button>
+              </div>
             </div>
 
-            {/* Right: image + location + language (phone card removed) */}
+            {/* Right: image + project context */}
             <div className="space-y-8">
               <div className="relative">
                 <img
@@ -177,7 +127,6 @@ const ContactSection: React.FC<Props> = ({
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Lokasjon (kept) */}
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
                   <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mb-4">
                     <i className="ri-map-pin-line text-2xl text-purple-400"></i>
@@ -186,17 +135,14 @@ const ContactSection: React.FC<Props> = ({
                   <p className="text-blue-200">{addressLine}</p>
                 </div>
 
-                {/* Språk */}
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mb-4">
-                    <i className="ri-chat-3-line text-2xl text-orange-400"></i>
+                    <i className="ri-folder-line text-2xl text-orange-400"></i>
                   </div>
-                  <h4 className="text-lg font-semibold text-white mb-2">Språk</h4>
-                  <p className="text-blue-200">Norsk, Engelsk, Spansk, Bosnisk</p>
+                  <h4 className="text-lg font-semibold text-white mb-2">Kontekst</h4>
+                  <p className="text-blue-200">Studentprosjekt og portefølje</p>
                 </div>
               </div>
-
-              
             </div>
           </div>
 
