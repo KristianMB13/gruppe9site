@@ -28,7 +28,7 @@ const ProjectsSection = () => {
       image: withBase('images/Guttasmiler.jpg'),
       tags: ['AI Agents', 'RAG', 'Maritime Data', 'Decision Support'],
       color: 'from-violet-500 to-blue-600',
-      route: '/prosjektstatus',
+      route: '/projects/bachelor',
     },
     {
       title: 'IK Start - Køfri kioskopplevelse',

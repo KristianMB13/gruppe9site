@@ -105,7 +105,7 @@ const AboutSection = () => {
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">2026</div>
-              <div className="text-gray-600">Porteføljeoppdatert</div>
+              <div className="text-gray-600">Bachelor fullført</div>
             </div>
           </div>
         </div>

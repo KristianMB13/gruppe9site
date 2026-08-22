@@ -131,10 +131,11 @@ const ProsjektstatusPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Bachelorprosjekt <span className="gradient-text">Agentic Observability</span>
+              Prosjektstatus <span className="gradient-text">bachelorprosjekt</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Et UiA-bachelorprosjekt med Knowit og Telenor Maritime om agentbasert beslutningsstøtte for maritim drift.
+              Statusnotater fra planlegging, kvalitetssikring og prosess i UiA-bachelorprosjektet med Knowit og
+              Telenor Maritime.
             </p>
             <div className="mt-10 max-w-3xl mx-auto">
               <p className="text-lg font-semibold text-gray-900 mb-4">Statusvideo</p>
@@ -158,7 +159,7 @@ const ProsjektstatusPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">
-              Knowit + Telenor Maritime
+              Historikk: Knowit + Telenor Maritime
             </h2>
           </div>
         </div>
