@@ -33,9 +33,9 @@ const KristianPage = () => {
 
   const competencies = [
     { category: 'Frontend', skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Figma'] },
-    { category: 'Backend', skills: ['Python', 'Java', 'Node.js'] },
-    { category: 'Database', skills: ['MySQL/MariaDB'] },
-    { category: 'Utviklerverktøy', skills: ['Git/GitHub', 'Docker', 'Visual Studio Code', 'Visual Studio', 'PowerShell', 'Trello'] },
+    { category: 'Backend & API', skills: ['Python', 'Java', 'Node.js', 'FastAPI', 'REST APIs'] },
+    { category: 'Database & data', skills: ['PostgreSQL', 'MySQL/MariaDB', 'SQL'] },
+    { category: 'Utviklerverktøy', skills: ['Git/GitHub', 'Docker', 'Visual Studio Code', 'Visual Studio', 'PowerShell', 'Trello', 'AI-assisted development'] },
   ];
 
   const interests = [
@@ -74,7 +74,7 @@ const KristianPage = () => {
                   Kristian Magnus <span className="gradient-text">Bergedalen</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-6">
-                  Kolbotn • IT og informasjonssystemer • Frontend og UX
+                  Kolbotn • Bachelor i IT og informasjonssystemer • Utvikling, UX og AI
                 </p>
                 
                 <div className="flex space-x-4">
@@ -102,7 +102,7 @@ const KristianPage = () => {
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Kort om meg</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Nyutdannet IT-student med interesse for frontend, design, teknologi og kunstig intelligens. Jeg liker å kombinere praktisk utvikling med brukeropplevelse og universell utforming.
+                  Nyutdannet med bachelor i IT og informasjonssystemer, med interesse for utvikling, frontend, brukeropplevelse og AI. Jeg liker å kombinere praktisk kode, tydelig brukerflyt og nye verktøy.
                 </p>
               </div>
             </div>
@@ -120,7 +120,7 @@ const KristianPage = () => {
               
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
                 <p>
-                  Jeg heter Kristian Magnus Bergedalen, kommer fra Kolbotn og har studert IT og informasjonssystemer ved Universitetet i Agder. Gjennom studiet har jeg fått erfaring med programmering, databaser, systemanalyse, universell utforming og design. Jeg har også deltatt i flere gruppeprosjekter hvor samarbeid og strukturert arbeid har vært sentralt.
+                  Jeg heter Kristian Magnus Bergedalen, kommer fra Kolbotn og har bachelor i IT og informasjonssystemer fra Universitetet i Agder. Gjennom studiet har jeg fått erfaring med programmering, databaser, systemanalyse, universell utforming og design. Jeg har også deltatt i flere gruppeprosjekter hvor samarbeid og strukturert arbeid har vært sentralt.
                 </p>
                 
                 <p>
@@ -144,7 +144,7 @@ const KristianPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Relevante <span className="gradient-text">Kompetanseområder IT</span>
+              Relevante <span className="gradient-text">kompetanseområder</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
           </div>
@@ -193,10 +193,10 @@ const KristianPage = () => {
       <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            La oss samarbeide!
+            Vil du se mer av arbeidet?
           </h2>
           <p className="text-xl text-purple-100 mb-8">
-            Interessert i å jobbe sammen eller lære mer om mine prosjekter?
+            GitHub og LinkedIn har mer kontekst om prosjektene og erfaringen min.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
