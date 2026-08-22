@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -23,7 +22,6 @@ const Navbar = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Navigate to home page and then scroll
       window.REACT_APP_NAVIGATE('/');
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -35,6 +33,14 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const navItems = [
+    { name: 'Hjem', id: 'hero' },
+    { name: 'Om oss', id: 'about' },
+    { name: 'Prosjekter', id: 'projects' },
+    { name: 'Team', id: 'team' },
+    { name: 'Kontakt', id: 'contact' },
+  ];
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -43,7 +49,6 @@ const Navbar = () => {
     }`} style={{ margin: 0, padding: 0 }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('hero')}
@@ -57,19 +62,12 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
-              {[
-                { name: 'Hjem', id: 'hero' },
-                { name: 'Om oss', id: 'about' },
-                { name: 'Prosjekter', id: 'projects' },
-                { name: 'Team', id: 'team' },
-                { name: 'Kontakt', id: 'contact' }
-              ].map((item) => (
+              {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection((item as any).id)}
+                  onClick={() => scrollToSection(item.id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${
                     isScrolled 
                       ? 'text-gray-700 hover:text-blue-600' 
@@ -79,24 +77,9 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
-              <button
-                onClick={() => {
-                  if (window.REACT_APP_NAVIGATE) window.REACT_APP_NAVIGATE('/prosjektstatus');
-                  else window.location.href = '/prosjektstatus';
-                }}
-                className={`ml-4 pl-4 border-l transition-colors cursor-pointer ${
-                  isScrolled 
-                    ? 'border-gray-300 text-gray-700 hover:text-blue-600' 
-                    : 'border-white/30 text-white hover:text-blue-200'
-                }`}
-              >
-                <div className="text-sm font-medium">Prosjektstatus</div>
-                <div className="text-xs opacity-75">(Knowit)</div>
-              </button>
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -105,6 +88,7 @@ const Navbar = () => {
                   ? 'text-gray-700 hover:text-blue-600' 
                   : 'text-white hover:text-blue-200'
               }`}
+              aria-label={isMobileMenuOpen ? 'Lukk meny' : 'Åpne meny'}
             >
               <div className="w-6 h-6 flex items-center justify-center">
                 <i className={`ri-${isMobileMenuOpen ? 'close' : 'menu'}-line text-xl`}></i>
@@ -113,39 +97,18 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg mt-2 shadow-lg">
-              {[
-                { name: 'Hjem', id: 'hero' },
-                { name: 'Om oss', id: 'about' },
-                { name: 'Prosjekter', id: 'projects' },
-                { name: 'Team', id: 'team' },
-                { name: 'Kontakt', id: 'contact' }
-              ].map((item) => (
+              {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => {
-                    scrollToSection((item as any).id);
-                    setIsMobileMenuOpen(false);
-                  }}
+                  onClick={() => scrollToSection(item.id)}
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left cursor-pointer whitespace-nowrap"
                 >
                   {item.name}
                 </button>
               ))}
-              <button
-                onClick={() => {
-                  if (window.REACT_APP_NAVIGATE) window.REACT_APP_NAVIGATE('/prosjektstatus');
-                  else window.location.href = '/prosjektstatus';
-                  setIsMobileMenuOpen(false);
-                }}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left cursor-pointer mt-2 border-t border-gray-200 pt-3"
-              >
-                <div>Prosjektstatus</div>
-                <div className="text-sm opacity-75">(Knowit)</div>
-              </button>
             </div>
           </div>
         )}

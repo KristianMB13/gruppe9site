@@ -21,32 +21,32 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: 'IK Start – Køfri kioskopplevelse',
+      title: 'IK Start - Køfri kioskopplevelse',
       category: 'Mobile App & UX Design',
       description:
-        'Revolusjonerende løsning for køfri handel som forbedrer kundeopplevelsen og effektiviserer driften for IK Start.',
+        'Designkonsept for en køfri kioskopplevelse der supportere kan forhåndsbestille mat og hente når bestillingen er klar.',
       image: withBase('images/IkStartappbilde.jpg'),
-      tags: ['React Native', 'Payment Integration', 'UX Design', 'Real-time'],
+      tags: ['Figma', 'UX Research', 'Service Design', 'Prototype'],
       color: 'from-blue-500 to-cyan-500',
       route: '/projects/ikstart',
     },
     {
-      title: 'Kartverket – Webapp med kart og sikker innlogging',
+      title: 'Kartverket - Webapp med kart og sikker innlogging',
       category: 'Web Application & Security',
       description:
-        'Avansert kartapplikasjon med robust sikkerhet og brukerautentisering for Kartverket sine tjenester.',
+        'Studentprosjekt med kartfunksjonalitet, sikker innlogging og strukturert brukerflyt for Kartverket-relatert data.',
       image: withBase('images/kartverketlogooo.jpg'),
-      tags: ['React', 'Maps API', 'Authentication', 'Security'],
+      tags: ['React', 'Maps', 'Authentication', 'Security'],
       color: 'from-green-500 to-emerald-500',
       route: '/projects/kartverket',
     },
     {
-      title: 'FINN.no – Forbedret kart og universell utforming',
+      title: 'FINN.no - Forbedret kart og universell utforming',
       category: 'Accessibility & User Experience',
       description:
-        'Omfattende forbedringer av kartfunksjonalitet og tilgjengelighet for å gjøre FINN.no mer inkluderende for alle brukere.',
+        'Analyse og redesign av FINN.no Kart med fokus på tilgjengelighet, brukertesting, WCAG og bedre brukeropplevelse.',
       image: withBase('images/Finnprojectside.jpg'),
-      tags: ['Accessibility', 'Maps', 'Universal Design', 'Frontend'],
+      tags: ['WCAG', 'User Testing', 'Universal Design', 'Figma'],
       color: 'from-orange-500 to-red-500',
       route: '/projects/finn',
     },
@@ -65,7 +65,7 @@ const ProjectsSection = () => {
               Våre <span className="gradient-text">Prosjekter</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Utforsk våre innovative løsninger som kombinerer teknisk ekspertise med kreativ problemløsning
+              Se studentprosjekter der vi jobbet med frontend, UX, sikkerhet og universell utforming
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-6"></div>
           </div>
@@ -81,7 +81,6 @@ const ProjectsSection = () => {
                   }
                 }}
               >
-                {/* Project Image */}
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={project.image}
@@ -98,14 +97,12 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                {/* Project Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
 
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <span
@@ -117,26 +114,22 @@ const ProjectsSection = () => {
                     ))}
                   </div>
 
-                  {/* Action Button */}
                   <button className="group/btn w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap">
                     Se detaljer
                     <i className="ri-arrow-right-line ml-2 group-hover/btn:translate-x-1 transition-transform duration-300"></i>
                   </button>
                 </div>
 
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
             ))}
           </div>
 
-          {/* Call to Action */}
           <div className="text-center mt-16">
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Har du et prosjekt i tankene?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Vil du vite mer om arbeidet?</h3>
               <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Vi er alltid interessert i nye utfordringer og muligheter for samarbeid. La oss diskutere hvordan vi kan
-                hjelpe deg med ditt neste prosjekt.
+                Ta kontakt hvis du vil høre mer om prosjektarbeidet, prosessen eller teknologien vi brukte.
               </p>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
