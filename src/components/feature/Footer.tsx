@@ -1,4 +1,3 @@
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -12,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold gradient-text mb-4">Code 9 · UiA</h3>
             <p className="text-gray-400 mb-4">
-              Fire IT-studenter som skaper innovative teknologiske løsninger med fokus på kvalitet og brukeropplevelse.
+              Student- og porteføljeside for Gruppe 9 ved Universitetet i Agder, med utvalgte prosjekter fra IT og informasjonssystemer.
             </p>
           </div>
 
@@ -44,8 +43,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Kontakt</h4>
             <div className="space-y-3">
               <div className="flex items-center">
-                <i className="ri-mail-line text-red-400 mr-3"></i>
-                <span className="text-gray-400">jonasmp@uia.no</span>
+                <i className="ri-github-fill text-red-400 mr-3"></i>
+                <a
+                  href="https://github.com/KristianMB13/gruppe9site"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  KristianMB13/gruppe9site
+                </a>
               </div>
               <div className="flex items-center">
                 <i className="ri-map-pin-line text-red-400 mr-3"></i>
@@ -57,7 +63,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Code 9 · Universitetet i Agder.
+            © 2025-2026 Code 9 · Universitetet i Agder.
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
           </div>
