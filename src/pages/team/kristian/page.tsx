@@ -5,10 +5,7 @@ import Footer from '../../../components/feature/Footer';
 const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`;
 
 const KristianPage = () => {
-
-  // Set scroll position to top immediately, before any other effects
   useEffect(() => {
-    // Force immediate scroll to top without smooth behavior
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -35,11 +32,10 @@ const KristianPage = () => {
   }, []);
 
   const competencies = [
-    { category: 'Front-End', skills: ['JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Figma'] },
-    { category: 'Back-End', skills: ['Python', 'Java', 'React', 'TypeScript', 'Node.js' ] },
+    { category: 'Frontend', skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Figma'] },
+    { category: 'Backend', skills: ['Python', 'Java', 'Node.js'] },
     { category: 'Database', skills: ['MySQL/MariaDB'] },
-    { category: 'Utviklerverktøy', skills: ['Git/GitHub', 'Docker', 'Visual Studio', 'Visual Studio Code', 'PowerShell', 'Trello', 'Discord'] },
-
+    { category: 'Utviklerverktøy', skills: ['Git/GitHub', 'Docker', 'Visual Studio Code', 'Visual Studio', 'PowerShell', 'Trello'] },
   ];
 
   const interests = [
@@ -53,12 +49,10 @@ const KristianPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Navbar />
       
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Profile Image */}
             <div className="relative">
               <div className="relative w-full max-w-md mx-auto">
                 <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
@@ -66,33 +60,30 @@ const KristianPage = () => {
                     src={withBase('images/kristian.jpg')}
                     alt="Kristian Magnus Bergedalen"
                     className="w-full h-full object-cover transform transition-transform duration-500 will-change-transform"
-                    /* Slight zoom-in + shift crop upward */
                     style={{ transform: 'scale(1.03)', objectPosition: '50% 35%' }}
                   />
                 </div>
-                {/* Floating decoration */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full opacity-20 animate-pulse"></div>
                 <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-30"></div>
               </div>
             </div>
 
-            {/* Profile Info */}
             <div className="space-y-6">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                   Kristian Magnus <span className="gradient-text">Bergedalen</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-6">
-                  23 år gammel • Kolbotn • IT og informasjonssystemer
+                  Kolbotn • IT og informasjonssystemer • Frontend og UX
                 </p>
                 
-                {/* Social Links */}
                 <div className="flex space-x-4">
                   <a
                     href="https://github.com/KristianMB13"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    aria-label="Kristian på GitHub"
                   >
                     <i className="ri-github-fill text-xl"></i>
                   </a>
@@ -101,6 +92,7 @@ const KristianPage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    aria-label="Kristian på LinkedIn"
                   >
                     <i className="ri-linkedin-fill text-xl"></i>
                   </a>
@@ -110,8 +102,7 @@ const KristianPage = () => {
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Kort om meg</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Student med interesse for design, teknologi og sport. Liker å være aktiv, spesielt med fotball, 
-                  og har også en interesse for kunstig intelligens og hvordan den kan brukes i nye løsninger.
+                  Nyutdannet IT-student med interesse for frontend, design, teknologi og kunstig intelligens. Jeg liker å kombinere praktisk utvikling med brukeropplevelse og universell utforming.
                 </p>
               </div>
             </div>
@@ -119,7 +110,6 @@ const KristianPage = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="kristian-profile" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -130,15 +120,15 @@ const KristianPage = () => {
               
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
                 <p>
-                  Jeg heter Kristian Magnus Bergdalen, er 23 år gammel og kommer fra Kolbotn, men studerer IT og informasjonssystemer ved Universitetet i Agder. Gjennom studiet har jeg fått erfaring med programmering, databaser, systemanalyse, universell utforming og design. Jeg har også deltatt i flere gruppeprosjekter hvor samarbeid og strukturert arbeid har vært sentralt.
+                  Jeg heter Kristian Magnus Bergedalen, kommer fra Kolbotn og har studert IT og informasjonssystemer ved Universitetet i Agder. Gjennom studiet har jeg fått erfaring med programmering, databaser, systemanalyse, universell utforming og design. Jeg har også deltatt i flere gruppeprosjekter hvor samarbeid og strukturert arbeid har vært sentralt.
                 </p>
                 
                 <p>
-                  Jeg har alltid hatt en sterk interesse for teknologi, helt siden jeg var liten. Innen IT er design noe av det som interesserer meg mest. Jeg har vært aktiv i Figma og jobbet mye med universell utforming i tidligere prosjekter. I tillegg har jeg en interesse for kunstig intelligens, og følger jevnlig med på hvordan AI kan brukes til å forbedre og effektivisere systemer
+                  Jeg har alltid hatt en sterk interesse for teknologi. Innen IT er design og brukeropplevelse noe av det som interesserer meg mest. Jeg har vært aktiv i Figma og jobbet mye med universell utforming i tidligere prosjekter. I tillegg følger jeg med på hvordan AI kan brukes til å forbedre og effektivisere utviklingsarbeid.
                 </p>
                 
                 <p>
-                  Utenfor studiene liker jeg å trene og løpe, og jeg er generelt glad i sport, spesielt fotball, men egentlig alt som får meg i bevegelse. Jeg setter pris på å sosialisere og kobler gjerne av med spill eller samtaler med kompiser.
+                  Utenfor studier og utvikling liker jeg å trene og løpe, og jeg er generelt glad i sport, spesielt fotball. Jeg setter pris på å sosialisere og kobler gjerne av med spill eller samtaler med kompiser.
                 </p>
 
                 <p>
@@ -150,7 +140,6 @@ const KristianPage = () => {
         </div>
       </section>
 
-      {/* Competencies Section */}
       <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -178,7 +167,6 @@ const KristianPage = () => {
         </div>
       </section>
 
-      {/* Interests Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -202,7 +190,6 @@ const KristianPage = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
       <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">

@@ -1,9 +1,8 @@
-# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -33,7 +32,6 @@ jobs:
 
       - name: Build
         env:
-          # Serve under /<repo-name>/ on GitHub Pages
           BASE_PATH: "/${{ github.event.repository.name }}/"
           IS_PREVIEW: "false"
         run: npm run build
@@ -41,19 +39,15 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out   # <-- Vite outDir
+          path: ./out
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deploy              # <-- unique ID (no duplicates)
-        uses: actions/deploy-pages@v4
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
