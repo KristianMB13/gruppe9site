@@ -1,6 +1,6 @@
 # Gruppe 9 Portfolio Website
 
-A portfolio website built by Group 9 at the University of Agder to present our team and selected student projects.
+A portfolio website originally developed by Group 9 at the University of Agder to present our team and selected student projects. It has later been maintained and improved as part of my development portfolio.
 
 Instead of making a simple presentation page, we used the assignment as a chance to get practical experience with modern frontend development and to present our work in a more professional way.
 
@@ -35,7 +35,7 @@ My work included:
 - Setting up routing and GitHub Pages deployment
 - Adding project documentation and media
 - Debugging layout, asset paths and deployment issues
-- Using AI-assisted development as part of the workflow while still reviewing, adapting and testing the code manually
+- Reviewing and testing changes before they were integrated
 
 ## Featured Projects
 
@@ -50,6 +50,10 @@ Mobile app design concept for reducing food queues at IK Start match days. The w
 ### Kartverket Web App
 
 Student web application project involving map functionality, authentication and security-focused design decisions.
+
+## AI-Assisted Development
+
+AI-assisted development tools have been used during parts of the project for code review, debugging, refactoring and documentation. I use tools such as Codex and Claude Code as development assistants, while reviewing, testing and understanding changes before they are integrated into the project.
 
 ## Running Locally
 
