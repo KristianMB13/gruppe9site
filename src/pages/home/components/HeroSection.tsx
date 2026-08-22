@@ -25,13 +25,6 @@ const HeroSection = () => {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-float-delayed"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-violet-400/10 rounded-full blur-3xl"></div>
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Left side - Text content */}
@@ -39,12 +32,12 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Code 9
               <span className="block text-3xl md:text-4xl font-normal text-purple-200 mt-2">
-                Fire IT-studenter med lidenskap for teknologi
+                Studentprosjekter fra IT og informasjonssystemer
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-purple-100 mb-8 leading-relaxed">
-              Vi utvikler smarte løsninger med fokus på design, brukervennlighet og teknologi
+              En porteføljeside for gruppeprosjekter ved UiA, med arbeid innen frontend, UX, sikkerhet, kart og AI.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -57,10 +50,10 @@ const HeroSection = () => {
               </button>
               
               <button
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group glass-effect text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transform hover:scale-105 transition-all duration-300 cursor-pointer whitespace-nowrap"
               >
-                Lær mer om oss
+                Møt teamet
                 <i className="ri-arrow-down-line ml-2 group-hover:translate-y-1 transition-transform duration-300"></i>
               </button>
             </div>
