@@ -10,7 +10,7 @@ https://kristianmb13.github.io/gruppe9site/
 
 ## About The Project
 
-The site presents team members and project work from our IT and Information Systems studies, including frontend development, UX design, universal design, security, mapping and mobile app prototyping.
+The site presents team members and project work from our IT and Information Systems studies, including frontend development, UX design, universal design, security, mapping, mobile app prototyping and AI-assisted decision support.
 
 This was primarily a learning and portfolio project, not a production product. Some pages document design and prototype work rather than shipped applications.
 
@@ -38,6 +38,10 @@ My work included:
 - Reviewing and testing changes before they were integrated
 
 ## Featured Projects
+
+### Bachelor Project - Agentic Observability
+
+Bachelor project with Knowit and Telenor Maritime exploring agent-based decision support for maritime operations. The work focuses on sensor data, AI agents, retrieval-augmented generation, explainability and how operators can understand system state and suggested actions.
 
 ### FINN.no Map Redesign
 

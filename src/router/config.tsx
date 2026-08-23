@@ -5,6 +5,7 @@ import NidalPage from '../pages/team/nidal/page';
 import IKStartPage from '../pages/projects/ikstart/page';
 import KartverketPage from '../pages/projects/kartverket/page';
 import FinnPage from '../pages/projects/finn/page';
+import BachelorPage from '../pages/projects/bachelor/page';
 import KristianPage from '../pages/team/kristian/page';
 import JonasPage from '../pages/team/jonas/page';
 import PheeraphanPage from '../pages/team/pheeraphan/page';
@@ -30,6 +31,10 @@ const routes: RouteObject[] = [
   {
     path: '/projects/finn',
     element: <FinnPage />,
+  },
+  {
+    path: '/projects/bachelor',
+    element: <BachelorPage />,
   },
   {
     path: '/team/kristian',

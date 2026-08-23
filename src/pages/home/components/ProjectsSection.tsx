@@ -21,6 +21,16 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: 'Bachelorprosjekt - Agentic Observability',
+      category: 'AI & Decision Support',
+      description:
+        'Bachelorprosjekt med Knowit og Telenor Maritime om agentbasert beslutningsstøtte for maritim drift, sensordata og forklarbar AI.',
+      image: withBase('images/Guttasmiler.jpg'),
+      tags: ['AI Agents', 'RAG', 'Maritime Data', 'Decision Support'],
+      color: 'from-violet-500 to-blue-600',
+      route: '/projects/bachelor',
+    },
+    {
       title: 'IK Start - Køfri kioskopplevelse',
       category: 'Mobile App & UX Design',
       description:
@@ -65,12 +75,12 @@ const ProjectsSection = () => {
               Våre <span className="gradient-text">Prosjekter</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Se studentprosjekter der vi jobbet med frontend, UX, sikkerhet og universell utforming
+              Se studentprosjekter der vi jobbet med frontend, UX, sikkerhet, AI og universell utforming
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-6"></div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
             {projects.map((project, index) => (
               <div
                 key={index}
