@@ -2,6 +2,21 @@ import { useEffect } from 'react';
 import Navbar from '../../components/feature/Navbar';
 import Footer from '../../components/feature/Footer';
 
+const processVideos = [
+  {
+    title: 'Statusvideo',
+    description: 'En kort gjennomgang av planlegging, kvalitet og hvordan gruppen jobbet underveis.',
+    embedUrl: 'https://www.youtube.com/embed/-zL-mKu7GNg',
+    iframeTitle: 'Statusvideo for bachelorprosjektet',
+  },
+  {
+    title: 'Time9 og timeføring',
+    description: 'Gruppen laget en egen liten løsning, Time9, for å holde oversikt over timer og ressursbruk i prosjektet.',
+    embedUrl: 'https://www.youtube.com/embed/8AjCyIJvhGQ',
+    iframeTitle: 'Time9 timeføring i bachelorprosjektet',
+  },
+];
+
 const ProsjektstatusPage = () => {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
@@ -13,91 +28,91 @@ const ProsjektstatusPage = () => {
     {
       number: '1',
       title: 'Hva konkret er det vi skal utvikle / gjøre?',
-      content: 'Vi skal utvikle en konseptuell og teknisk løsning for agentbasert beslutningsstøtte innen maritim drift. Løsningen tar utgangspunkt i sanntids og historiske sensordata fra skip, og kombinerer disse med AI-agenter og språkmodeller for å forklare tilstand, avdekke avvik og foreslå tiltak. Målet er å utforske hvordan moderne arkitektur og AI kan brukes til mer enn tradisjonell overvåkning og gi reell verdi til operatører og teknisk personell.'
+      content: 'Vi skal utvikle en konseptuell og teknisk løsning for agentbasert beslutningsstøtte innen maritim drift. Løsningen tar utgangspunkt i sanntids og historiske sensordata fra skip, og kombinerer disse med AI-agenter og språkmodeller for å forklare tilstand, avdekke avvik og foreslå tiltak. Målet er å utforske hvordan moderne arkitektur og AI kan brukes til mer enn tradisjonell overvåkning og gi reell verdi til operatører og teknisk personell.',
     },
     {
-  number: '2',
-  title: 'Viktige kvalitetsaspekter i produktet (og hvorfor)',
-  content: [
-    {
-      subtitle: 'Brukerforståelse og forklarbarhet',
-      text: 'Løsningen skal gjøre komplekse data og analyser forståelige for brukeren. I stedet for å presentere rådata, skal systemet forklare hva som skjer, hvorfor det skjer, og hva det kan bety for videre drift.'
+      number: '2',
+      title: 'Viktige kvalitetsaspekter i produktet (og hvorfor)',
+      content: [
+        {
+          subtitle: 'Brukerforståelse og forklarbarhet',
+          text: 'Løsningen skal gjøre komplekse data og analyser forståelige for brukeren. I stedet for å presentere rådata, skal systemet forklare hva som skjer, hvorfor det skjer, og hva det kan bety for videre drift.',
+        },
+        {
+          subtitle: 'Pålitelighet og stabilitet',
+          text: 'Produktet må oppleves som stabilt og forutsigbart. Når løsningen brukes til beslutningsstøtte, er det avgjørende at brukeren har tillit til både systemet og informasjonen som presenteres.',
+        },
+        {
+          subtitle: 'Synliggjøring av datakvalitet og usikkerhet',
+          text: 'Dersom data er mangelfulle, forsinkede eller usikre, skal dette komme tydelig frem. Dette er spesielt viktig når AI benyttes til analyse og anbefalinger, for å redusere risiko for feil beslutninger.',
+        },
+        {
+          subtitle: 'Fleksibel og robust arkitektur',
+          text: 'Løsningen skal bygges på en arkitektur som gjør det mulig å koble sammen flere datakilder, AI-modeller og tjenester, og som kan videreutvikles over tid.',
+        },
+        {
+          subtitle: 'Grunnleggende sikkerhet og ansvarlig bruk av AI',
+          text: 'Selv om sikkerhet ikke er hovedfokus i prosjektet, skal løsningen håndtere data på en ansvarlig måte og ta hensyn til risiko knyttet til bruk av AI, som feilslutninger og hallusinasjoner.',
+        },
+      ],
+      note: 'Disse kvalitetsaspektene er viktige fordi verdien i løsningen ikke ligger i mengden data eller teknologi, men i hvor godt den støtter forståelige, pålitelige og trygge beslutninger for brukeren.',
     },
     {
-      subtitle: 'Pålitelighet og stabilitet',
-      text: 'Produktet må oppleves som stabilt og forutsigbart. Når løsningen brukes til beslutningsstøtte, er det avgjørende at brukeren har tillit til både systemet og informasjonen som presenteres.'
+      number: '3',
+      title: 'Hvordan vet vi om ønsket kvalitet er oppnådd? (indikatorer)',
+      content: [
+        {
+          subtitle: 'Brukertesting og faglig feedback',
+          text: 'Korte gjennomganger og diskusjoner med Knowit, Telenor Maritime og relevante roller fra Color Line (f.eks. kapteiner og maskinister) for å vurdere om løsningen er forståelig, nyttig og gir mening i en operativ kontekst.',
+        },
+        {
+          subtitle: 'Forklarbarhet og tillit til beslutningsstøtte',
+          text: 'Vurdering av om systemet tydelig forklarer hva som skjer i dataene, hvorfor det skjer, og om brukeren opplever analysene og anbefalingene som troverdige.',
+        },
+        {
+          subtitle: 'Synlig datakvalitet og usikkerhet',
+          text: 'Sjekk av om mangelfull, forsinket eller usikker data kommer tydelig frem, slik at beslutninger ikke tas på feil grunnlag.',
+        },
+        {
+          subtitle: 'Teknisk stabilitet og arkitektur',
+          text: 'Verifisering av at prototypen fungerer stabilt, og at arkitekturen er modulær, forståelig og egnet for videre utvikling og utvidelse.',
+        },
+        {
+          subtitle: 'Ansvarlig bruk av AI',
+          text: 'Evaluering av hvordan løsningen håndterer risiko knyttet til AI, som feilslutninger og hallusinasjoner, og hvordan dette kommuniseres til brukeren.',
+        },
+      ],
     },
-    {
-      subtitle: 'Synliggjøring av datakvalitet og usikkerhet',
-      text: 'Dersom data er mangelfulle, forsinkede eller usikre, skal dette komme tydelig frem. Dette er spesielt viktig når AI benyttes til analyse og anbefalinger, for å redusere risiko for feil beslutninger.'
-    },
-    {
-      subtitle: 'Fleksibel og robust arkitektur',
-      text: 'Løsningen skal bygges på en arkitektur som gjør det mulig å koble sammen flere datakilder, AI-modeller og tjenester, og som kan videreutvikles over tid.'
-    },
-    {
-      subtitle: 'Grunnleggende sikkerhet og ansvarlig bruk av AI',
-      text: 'Selv om sikkerhet ikke er hovedfokus i prosjektet, skal løsningen håndtere data på en ansvarlig måte og ta hensyn til risiko knyttet til bruk av AI, som feilslutninger og hallusinasjoner.'
-    }
-  ],
-  note: 'Disse kvalitetsaspektene er viktige fordi verdien i løsningen ikke ligger i mengden data eller teknologi, men i hvor godt den støtter forståelige, pålitelige og trygge beslutninger for brukeren.'
-},
-    {
-  number: '3',
-  title: 'Hvordan vet vi om ønsket kvalitet er oppnådd? (indikatorer)',
-  content: [
-    {
-      subtitle: 'Brukertesting og faglig feedback',
-      text: 'Korte gjennomganger og diskusjoner med Knowit, Telenor Maritime og relevante roller fra Color Line (f.eks. kapteiner og maskinister) for å vurdere om løsningen er forståelig, nyttig og gir mening i en operativ kontekst.'
-    },
-    {
-      subtitle: 'Forklarbarhet og tillit til beslutningsstøtte',
-      text: 'Vurdering av om systemet tydelig forklarer hva som skjer i dataene, hvorfor det skjer, og om brukeren opplever analysene og anbefalingene som troverdige.'
-    },
-    {
-      subtitle: 'Synlig datakvalitet og usikkerhet',
-      text: 'Sjekk av om mangelfull, forsinket eller usikker data kommer tydelig frem, slik at beslutninger ikke tas på feil grunnlag.'
-    },
-    {
-      subtitle: 'Teknisk stabilitet og arkitektur',
-      text: 'Verifisering av at prototypen fungerer stabilt, og at arkitekturen er modulær, forståelig og egnet for videre utvikling og utvidelse.'
-    },
-    {
-      subtitle: 'Ansvarlig bruk av AI',
-      text: 'Evaluering av hvordan løsningen håndterer risiko knyttet til AI, som feilslutninger og hallusinasjoner, og hvordan dette kommuniseres til brukeren.'
-    }
-  ]
-},
     {
       number: '4',
       title: 'Planer, backlogg, estimater og ressursbruk – hvordan få kontroll?',
       content: [
         'Backlogg: Oppgaver som må gjøres etter prioritering og status i Trello.',
-        'Enkle estimater per oppgave i timer eller minutter',
-        'Timeføring bruker vi google regneark.',
-        'Målet er å ha både et "budsjett" (estimat) og et "regnskap" (reelle timer), slik at vi ser om vi ligger foran/bak, og kan justere tidlig.'
-      ]
+        'Enkle estimater per oppgave i timer eller minutter.',
+        'Timeføring ble fulgt opp gjennom Time9, en enkel side gruppen laget for å holde oversikt over arbeid og timer.',
+        'Målet er å ha både et "budsjett" (estimat) og et "regnskap" (reelle timer), slik at vi ser om vi ligger foran/bak, og kan justere tidlig.',
+      ],
     },
     {
       number: '5',
       title: 'Hvordan kvalitetssikrer vi planen?',
       content: [
         'Siden planen tidlig er usikker (prosjektet er åpent og vi lærer underveis), vil vi kvalitetssikre planen ved å:',
-        'Holde planen enkel og kortsiktig (1 uke av gangen)',
-        'Oppdatere planen jevnlig basert på hva vi faktisk får gjort',
-        'Ha synlige prioriteringer (hva er viktigst akkurat nå)',
-        'Vi skal ha jevnlige møter med Knowit og Telenor Maritime der vi presenterer hva som har blitt gjort og veien videre.'
-      ]
+        'Holde planen enkel og kortsiktig (1 uke av gangen).',
+        'Oppdatere planen jevnlig basert på hva vi faktisk får gjort.',
+        'Ha synlige prioriteringer (hva er viktigst akkurat nå).',
+        'Vi skal ha jevnlige møter med Knowit og Telenor Maritime der vi presenterer hva som har blitt gjort og veien videre.',
+      ],
     },
     {
       number: '6',
       title: 'Hvordan kvalitetssikrer vi backloggen?',
       content: [
-        'Oppgaver er små nok til å kunne fullføres innen kort tid',
-        'Hver oppgave har en tydelig "done"-beskrivelse (hva betyr det at oppgaven er ferdig?)',
-        'Vi prioriterer og rydder backloggen jevnlig (fjerne/endre oppgaver som ikke lenger er relevante)',
-        'Har reviews for godkjenning før den flyttes til "ferdig". Gruppe medlemmene kommenterer at de har gått gjennom og godkjenner den slik at den kan bli flyttet over til godkjent.'
-      ]
+        'Oppgaver er små nok til å kunne fullføres innen kort tid.',
+        'Hver oppgave har en tydelig "done"-beskrivelse (hva betyr det at oppgaven er ferdig?).',
+        'Vi prioriterer og rydder backloggen jevnlig (fjerne/endre oppgaver som ikke lenger er relevante).',
+        'Har reviews for godkjenning før den flyttes til "ferdig". Gruppemedlemmene kommenterer at de har gått gjennom og godkjenner den slik at den kan bli flyttet over til godkjent.',
+      ],
     },
     {
       number: '7',
@@ -105,27 +120,26 @@ const ProsjektstatusPage = () => {
       content: [
         'Estimat brukes til å velge realistisk mengde arbeid for en uke.',
         'Timeføring brukes til å se om vi undervurderer oppgaver eller bruker tid på "feil ting".',
-        'Hvis det er store avvik mellom estimat og faktisk tid, bruker vi det som læring og justerer estimatene våre videre.'
-      ]
+        'Hvis det er store avvik mellom estimat og faktisk tid, bruker vi det som læring og justerer estimatene våre videre.',
+      ],
     },
     {
       number: '8',
       title: 'Hvordan kan vi si noe om at ressursene er utnyttet på en god måte?',
       content: [
-        'Om vi fullfører prioriterte oppgaver jevnlig (fremdrift)',
-        'Om timeføringen viser fordeling på nyttige aktiviteter (utvikling, design, research, møter)',
-        'Om vi tidlig oppdager "tidstyver" (uklarhet, for store oppgaver, for mye venting) og gjør tiltak',
-        'At alle i gruppen bidrar jevnt og har tydelige oppgaver',
-        'Om arbeidsgiver er fornøyd'
-      ]
-    }
+        'Om vi fullfører prioriterte oppgaver jevnlig (fremdrift).',
+        'Om timeføringen viser fordeling på nyttige aktiviteter (utvikling, design, research, møter).',
+        'Om vi tidlig oppdager "tidstyver" (uklarhet, for store oppgaver, for mye venting) og gjør tiltak.',
+        'At alle i gruppen bidrar jevnt og har tydelige oppgaver.',
+        'Om arbeidsgiver er fornøyd.',
+      ],
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,24 +150,33 @@ const ProsjektstatusPage = () => {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Vår gjennomgang av prosjektkvalitet, planlegging og gjennomføring
             </p>
-            <div className="mt-10 max-w-3xl mx-auto">
-              <p className="text-lg font-semibold text-gray-900 mb-4">Status video 1</p>
-              <div className="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg">
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/-zL-mKu7GNg"
-                  title="Status video 1"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-8 rounded-full"></div>
           </div>
         </div>
       </section>
 
-      {/* Project Title */}
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            {processVideos.map((video) => (
+              <div key={video.title} className="bg-white rounded-3xl shadow-lg p-6 border border-gray-100">
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">{video.title}</h2>
+                <p className="text-gray-600 mb-5">{video.description}</p>
+                <div className="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg">
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={video.embedUrl}
+                    title={video.iframeTitle}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -164,7 +187,6 @@ const ProsjektstatusPage = () => {
         </div>
       </section>
 
-      {/* Content Sections */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-10">
@@ -173,17 +195,13 @@ const ProsjektstatusPage = () => {
                 key={index}
                 className="bg-white rounded-3xl shadow-lg p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-shadow duration-300"
               >
-                {/* Section Number and Title */}
                 <div className="flex gap-6 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-lg">{section.number}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 pt-1">
-                    {section.title}
-                  </h3>
+                  <h3 className="text-2xl font-bold text-gray-900 pt-1">{section.title}</h3>
                 </div>
 
-                {/* Content */}
                 <div className="ml-18 space-y-4 text-gray-600 leading-relaxed">
                   {typeof section.content === 'string' ? (
                     <p>{section.content}</p>
@@ -228,5 +246,3 @@ const ProsjektstatusPage = () => {
 };
 
 export default ProsjektstatusPage;
-
-
