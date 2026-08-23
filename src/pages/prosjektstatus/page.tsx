@@ -4,16 +4,22 @@ import Footer from '../../components/feature/Footer';
 
 const processVideos = [
   {
+    label: '01',
+    kicker: 'Planlegging og kvalitet',
     title: 'Statusvideo',
     description: 'En kort gjennomgang av planlegging, kvalitet og hvordan gruppen jobbet underveis.',
     embedUrl: 'https://www.youtube.com/embed/-zL-mKu7GNg',
     iframeTitle: 'Statusvideo for bachelorprosjektet',
+    accentClass: 'from-purple-500 to-blue-500',
   },
   {
+    label: '02',
+    kicker: 'Ressursbruk og timeføring',
     title: 'Time9 og timeføring',
     description: 'Gruppen laget en egen liten løsning, Time9, for å holde oversikt over timer og ressursbruk i prosjektet.',
     embedUrl: 'https://www.youtube.com/embed/8AjCyIJvhGQ',
     iframeTitle: 'Time9 timeføring i bachelorprosjektet',
+    accentClass: 'from-blue-500 to-cyan-500',
   },
 ];
 
@@ -155,24 +161,58 @@ const ProsjektstatusPage = () => {
         </div>
       </section>
 
-      <section className="py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            {processVideos.map((video) => (
-              <div key={video.title} className="bg-white rounded-3xl shadow-lg p-6 border border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">{video.title}</h2>
-                <p className="text-gray-600 mb-5">{video.description}</p>
-                <div className="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg">
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={video.embedUrl}
-                    title={video.iframeTitle}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-950 rounded-3xl shadow-2xl p-6 md:p-8">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+              <div>
+                <p className="text-sm font-semibold text-blue-200 mb-3">Prosessvideoer</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Hvordan gruppen jobbet underveis
+                </h2>
+                <p className="text-slate-300 max-w-3xl leading-relaxed">
+                  Statusvideoen viser planlegging og kvalitet i prosjektet, mens Time9-videoen viser verktøyet gruppen
+                  laget for å holde kontroll på timer og ressursbruk.
+                </p>
               </div>
-            ))}
+              <div className="flex flex-wrap gap-2">
+                {['Status', 'Time9', 'Kvalitet', 'Ressursbruk'].map((tag) => (
+                  <span key={tag} className="bg-white/10 text-slate-100 px-3 py-1 rounded-full text-xs font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {processVideos.map((video) => (
+                <article key={video.title} className="bg-white rounded-3xl overflow-hidden shadow-xl">
+                  <div className="relative w-full pb-[56.25%] bg-black">
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={video.embedUrl}
+                      title={video.iframeTitle}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div
+                        className={`w-12 h-12 rounded-full bg-gradient-to-r ${video.accentClass} flex items-center justify-center text-white font-bold`}
+                      >
+                        {video.label}
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-blue-600">{video.kicker}</p>
+                        <h3 className="text-2xl font-bold text-gray-900">{video.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed">{video.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
