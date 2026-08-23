@@ -139,41 +139,48 @@ const ProjectsSection = () => {
             ))}
           </div>
 
-          <div className="mt-10 bg-gradient-to-r from-violet-50 to-blue-50 rounded-2xl p-8 border border-violet-100">
+          <div
+            className="mt-10 bg-gradient-to-r from-slate-900 via-blue-900 to-violet-900 rounded-2xl p-8 shadow-xl border border-blue-200/20 cursor-pointer group"
+            onClick={navigateToBachelor}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault()
+                navigateToBachelor()
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label="Se bachelorprosjektet med Knowit og Telenor Maritime"
+          >
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
               <div>
-                <p className="text-sm font-semibold text-violet-600 mb-2">Bachelorprosjekt</p>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Bachelorprosjekt med Knowit og Telenor Maritime
-                </h3>
-                <p className="text-gray-600 max-w-3xl">
-                  Et UiA-bachelorprosjekt om agentbasert beslutningsstøtte for maritim drift, sensordata og forklarbar AI.
+                <p className="text-sm font-semibold text-blue-200 mb-2">
+                  Bachelorprosjekt · Knowit + Telenor Maritime
                 </p>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  Agentbasert beslutningsstøtte for maritim drift
+                </h3>
+                <p className="text-blue-50 max-w-3xl leading-relaxed">
+                  Vårt mest omfattende studieprosjekt: en prototype som koblet monitoreringsdata, observability og lokale
+                  AI-agenter for å støtte teknisk personell ved hendelsesanalyse.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {['FastAPI', 'PostgreSQL', 'Grafana', 'RAG', 'Lokal LLM'].map((tag) => (
+                    <span key={tag} className="bg-white/10 text-blue-50 px-3 py-1 rounded-full text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
               <button
-                onClick={navigateToBachelor}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 cursor-pointer whitespace-nowrap"
+                onClick={(event) => {
+                  event.stopPropagation()
+                  navigateToBachelor()
+                }}
+                className="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap group-hover:scale-105"
               >
-                Se bachelorprosjekt
+                Se bachelorprosjektet
                 <i className="ri-arrow-right-line ml-2"></i>
-              </button>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Har du et prosjekt i tankene?</h3>
-              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Vi er alltid interessert i nye utfordringer og muligheter for samarbeid. La oss diskutere hvordan vi kan
-                hjelpe deg med ditt neste prosjekt.
-              </p>
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer whitespace-nowrap"
-              >
-                Kontakt oss
-                <i className="ri-mail-line ml-2"></i>
               </button>
             </div>
           </div>
