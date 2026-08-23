@@ -41,6 +41,16 @@ const Navbar = () => {
     { name: 'Kontakt', id: 'contact' },
   ];
 
+  const navigateToBachelor = () => {
+    if (window.REACT_APP_NAVIGATE) {
+      window.REACT_APP_NAVIGATE('/projects/bachelor');
+    } else {
+      window.location.href = `${import.meta.env.BASE_URL}projects/bachelor`;
+    }
+
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -77,6 +87,17 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={navigateToBachelor}
+                className={`ml-4 pl-4 border-l transition-colors cursor-pointer ${
+                  isScrolled
+                    ? 'border-gray-300 text-gray-700 hover:text-blue-600'
+                    : 'border-white/30 text-white hover:text-blue-200'
+                }`}
+              >
+                <div className="text-sm font-medium">Bachelorprosjekt</div>
+                <div className="text-xs opacity-75">(Knowit)</div>
+              </button>
             </div>
           </div>
 
@@ -109,6 +130,13 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={navigateToBachelor}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left cursor-pointer mt-2 border-t border-gray-200 pt-3"
+              >
+                <div>Bachelorprosjekt</div>
+                <div className="text-sm opacity-75">(Knowit)</div>
+              </button>
             </div>
           </div>
         )}
