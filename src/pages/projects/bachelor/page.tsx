@@ -30,14 +30,14 @@ const summaryCards = [
   {
     icon: 'ri-dashboard-line',
     title: 'Resultat',
-    text: 'Resultatet var en proof-of-concept som viser hvordan AI kan støtte teknisk personell med forklaringer, datakontekst og mer målrettet feilsøking.',
+    text: 'Resultatet var en lokal prototype som koblet sammen alarmer, metrics, logger og relevant kontekst for å gi mer strukturert støtte ved hendelsesanalyse. Prosjektet inkluderte også en dynamisk dashboard proof-of-concept.',
   },
 ];
 
 const dataFlow = [
   {
-    title: 'Sensor- og tidsseriedata',
-    text: 'Data fra maritim drift danner grunnlaget for analyse og observability.',
+    title: 'Telemetry og monitoreringsdata',
+    text: 'Prosjektet kombinerte tidlig maritim telemetri med genererte og seedede monitoreringsscenarioer for å teste hendelser, alarmer, logger og metrics i et kontrollert miljø.',
   },
   {
     title: 'PostgreSQL og TimescaleDB',
@@ -122,13 +122,14 @@ const BachelorPage = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Min rolle</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Jeg hadde rollen som tech lead i prosjektgruppen og jobbet særlig med teknisk retning,
-                backend/prototypearbeid, database- og observability-oppsett, RAG/agentflyt og å knytte tekniske valg
-                til brukerbehov.
+                Jeg var tech lead i prosjektgruppen og hadde hovedansvar for systemarkitektur, teknologivalg og å
+                drive implementeringsarbeidet gjennom semesteret. Jeg jobbet blant annet med integrasjonen mellom
+                backend, database, observability-verktøy og AI-laget, og med hvordan vi brukte AI-assisterte
+                utviklingsverktøy i en større kodebase.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Arbeidet kombinerte praktisk utvikling med vurderinger rundt datakvalitet, forklarbarhet og ansvarlig
-                bruk av AI i et domene der beslutningsstøtte må være forståelig.
+                Prosjektet krevde at jeg satte meg inn i flere teknologier jeg ikke hadde brukt tidligere, blant annet
+                lokale språkmodeller, vector search, time-series databaser og observability-verktøy.
               </p>
             </div>
 
