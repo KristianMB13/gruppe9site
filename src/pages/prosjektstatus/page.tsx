@@ -74,7 +74,7 @@ const ProsjektstatusPage = () => {
       content: [
         'Backlogg: Oppgaver som må gjøres etter prioritering og status i Trello.',
         'Enkle estimater per oppgave i timer eller minutter',
-        'Timeføring bruker vi Google Regneark.',
+        'Timeføring bruker vi google regneark.',
         'Målet er å ha både et "budsjett" (estimat) og et "regnskap" (reelle timer), slik at vi ser om vi ligger foran/bak, og kan justere tidlig.'
       ]
     },
@@ -116,7 +116,7 @@ const ProsjektstatusPage = () => {
         'Om timeføringen viser fordeling på nyttige aktiviteter (utvikling, design, research, møter)',
         'Om vi tidlig oppdager "tidstyver" (uklarhet, for store oppgaver, for mye venting) og gjør tiltak',
         'At alle i gruppen bidrar jevnt og har tydelige oppgaver',
-        'Om oppdragsgiver er fornøyd'
+        'Om arbeidsgiver er fornøyd'
       ]
     }
   ];
@@ -131,14 +131,13 @@ const ProsjektstatusPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Prosjektstatus <span className="gradient-text">bachelorprosjekt</span>
+              Prosjektstatus <span className="gradient-text">(Knowit)</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Statusnotater fra planlegging, kvalitetssikring og prosess i UiA-bachelorprosjektet med Knowit og
-              Telenor Maritime.
+              Vår gjennomgang av prosjektkvalitet, planlegging og gjennomføring
             </p>
             <div className="mt-10 max-w-3xl mx-auto">
-              <p className="text-lg font-semibold text-gray-900 mb-4">Statusvideo</p>
+              <p className="text-lg font-semibold text-gray-900 mb-4">Status video 1</p>
               <div className="relative w-full pb-[56.25%] rounded-2xl overflow-hidden shadow-lg">
                 <iframe
                   className="absolute inset-0 w-full h-full"
@@ -159,7 +158,7 @@ const ProsjektstatusPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">
-              Historikk: Knowit + Telenor Maritime
+              Bachelorprosjekt - Code 9  (Knowit + Telenor Maritime)
             </h2>
           </div>
         </div>
