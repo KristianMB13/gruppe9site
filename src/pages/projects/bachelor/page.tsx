@@ -120,16 +120,15 @@ const BachelorPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Min rolle</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Prosjektarbeid</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Jeg var tech lead i prosjektgruppen og hadde hovedansvar for systemarkitektur, teknologivalg og å
-                drive implementeringsarbeidet gjennom semesteret. Jeg jobbet blant annet med integrasjonen mellom
-                backend, database, observability-verktøy og AI-laget, og med hvordan vi brukte AI-assisterte
-                utviklingsverktøy i en større kodebase.
+                Gruppen jobbet med en teknisk prototype som koblet sammen backend, database, observability-verktøy og
+                AI-laget. Arbeidet handlet både om å forstå domenet, strukturere data og teste hvordan agentbasert
+                beslutningsstøtte kunne presenteres på en nyttig måte.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Prosjektet krevde at jeg satte meg inn i flere teknologier jeg ikke hadde brukt tidligere, blant annet
-                lokale språkmodeller, vector search, time-series databaser og observability-verktøy.
+                Prosjektet krevde utforsking av flere teknologier og arbeidsformer, blant annet lokale språkmodeller,
+                vector search, time-series data, observability og AI-assistert utvikling i en større kodebase.
               </p>
             </div>
 
@@ -176,16 +175,16 @@ const BachelorPage = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl shadow-xl p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Statusvideo og historikk</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Prototype og veien videre</h2>
               <p className="text-gray-600">
-                Videoen og statusnotatene viser prosess, planlegging og kvalitetsarbeid underveis i bachelorprosjektet.
+                Videoen viser sluttprototypen og hvordan gruppen så for seg at løsningen kunne brukes videre.
               </p>
             </div>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/-zL-mKu7GNg"
-                title="Bachelor project status video"
+                src="https://www.youtube.com/embed/wPt3VBZrFWw"
+                title="Bachelor project prototype video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -196,7 +195,7 @@ const BachelorPage = () => {
                 onClick={goToStatus}
                 className="inline-flex items-center bg-gradient-to-r from-violet-600 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:from-violet-700 hover:to-blue-700 transition-all duration-300 cursor-pointer"
               >
-                Se statusnotater
+                Se statusnotater og historikk
                 <i className="ri-arrow-right-line ml-2"></i>
               </button>
             </div>
