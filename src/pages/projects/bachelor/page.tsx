@@ -172,49 +172,23 @@ const BachelorPage = () => {
       </section>
 
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl shadow-xl p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Videoer fra bachelorprosjektet</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Prototype og veien videre</h2>
               <p className="text-gray-600">
-                To korte videoer viser både sluttprototypen og hvordan gruppen jobbet med timeføring underveis.
+                Videoen viser sluttprototypen og hvordan gruppen så for seg at løsningen kunne brukes videre.
               </p>
             </div>
-
-            <div className="grid lg:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Prototype og veien videre</h3>
-                <p className="text-gray-600 mb-4">
-                  Videoen viser sluttprototypen og hvordan gruppen så for seg at løsningen kunne brukes videre.
-                </p>
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/wPt3VBZrFWw"
-                    title="Bachelor project prototype video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Time9 og timeføring</h3>
-                <p className="text-gray-600 mb-4">
-                  Time9 var en enkel løsning gruppen laget for å holde oversikt over timer og ressursbruk i prosjektet.
-                </p>
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/8AjCyIJvhGQ"
-                    title="Time9 timeføring i bachelorprosjektet"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg mb-8">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/wPt3VBZrFWw"
+                title="Bachelor project prototype video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
-
             <div className="text-center">
               <button
                 type="button"
